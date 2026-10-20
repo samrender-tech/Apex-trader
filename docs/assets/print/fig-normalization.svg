@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="790" viewBox="0 0 1500 790" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1500" height="790" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#000000"/></marker><marker id="aro" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#000000"/></marker></defs>
+<text x="26" y="36" font-size="22" font-weight="700" fill="#000000" text-anchor="start">Normalization — the chain, and the three exceptions</text>
+<text x="26" y="62" font-size="14" font-weight="400" fill="#000000" text-anchor="start">Every step is stated as a functional dependency, because the claim without the dependency is an assertion, not an analysis.</text>
+<rect x="36" y="104" width="330" height="170" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="52" y="140" font-size="24" font-weight="700" fill="#000000" text-anchor="start">1NF</text>
+<text x="52" y="166" font-size="15" font-weight="700" fill="#000000" text-anchor="start">Atomic attributes</text>
+<text x="52" y="194" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Every attribute holds one value.</text>
+<text x="52" y="215" font-size="13" font-weight="400" fill="#000000" text-anchor="start">metadata is JSONB: provenance,</text>
+<text x="52" y="236" font-size="13" font-weight="400" fill="#000000" text-anchor="start">never a queried attribute.</text>
+<path d="M366,189.0 L394,189.0" fill="none" stroke="#000000" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="398" y="104" width="330" height="170" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="414" y="140" font-size="24" font-weight="700" fill="#000000" text-anchor="start">2NF</text>
+<text x="414" y="166" font-size="15" font-weight="700" fill="#000000" text-anchor="start">No partial dependency</text>
+<text x="414" y="194" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Only three relations have a</text>
+<text x="414" y="215" font-size="13" font-weight="400" fill="#000000" text-anchor="start">composite key. In each, every</text>
+<text x="414" y="236" font-size="13" font-weight="400" fill="#000000" text-anchor="start">attribute needs the whole key.</text>
+<path d="M728,189.0 L756,189.0" fill="none" stroke="#000000" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="760" y="104" width="330" height="170" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="776" y="140" font-size="24" font-weight="700" fill="#000000" text-anchor="start">3NF</text>
+<text x="776" y="166" font-size="15" font-weight="700" fill="#000000" text-anchor="start">No transitive dependency</text>
+<text x="776" y="194" font-size="13" font-weight="400" fill="#000000" text-anchor="start">instrument.currency is not</text>
+<text x="776" y="215" font-size="13" font-weight="400" fill="#000000" text-anchor="start">derived from exchange: an ADR</text>
+<text x="776" y="236" font-size="13" font-weight="400" fill="#000000" text-anchor="start">can trade in another currency.</text>
+<path d="M1090,189.0 L1118,189.0" fill="none" stroke="#000000" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="1122" y="104" width="330" height="170" rx="6" fill="#e4e4e4" stroke="#000000" stroke-width="1.8"/>
+<text x="1138" y="140" font-size="24" font-weight="700" fill="#000000" text-anchor="start">BCNF</text>
+<text x="1138" y="166" font-size="15" font-weight="700" fill="#000000" text-anchor="start">Every determinant is a key</text>
+<text x="1138" y="194" font-size="13" font-weight="400" fill="#000000" text-anchor="start">All 38 base tables. No relation</text>
+<text x="1138" y="215" font-size="13" font-weight="400" fill="#000000" text-anchor="start">has a non-trivial FD whose left</text>
+<text x="1138" y="236" font-size="13" font-weight="400" fill="#000000" text-anchor="start">side is not a superkey.</text>
+<text x="36" y="330" font-size="18" font-weight="700" fill="#000000" text-anchor="start">Three deliberate denormalizations — each one a cache, each one verified</text>
+<rect x="28" y="356" width="1444" height="40" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="46" y="382" font-size="14" font-weight="700" fill="#000000" text-anchor="start">Relation</text>
+<text x="340" y="382" font-size="14" font-weight="700" fill="#000000" text-anchor="start">Derived from</text>
+<text x="750" y="382" font-size="14" font-weight="700" fill="#000000" text-anchor="start">Maintained by</text>
+<text x="1140" y="382" font-size="14" font-weight="700" fill="#000000" text-anchor="start">Verified by</text>
+<rect x="28" y="396" width="1444" height="44" rx="6" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+<text x="46" y="424" xml:space="preserve" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">ledger.balance</text>
+<text x="340" y="424" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">SUM over ledger.posting</text>
+<text x="750" y="424" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">trigger trg_posting_updates_balance</text>
+<text x="1140" y="424" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">ledger.verify_integrity()</text>
+<rect x="28" y="440" width="1444" height="44" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="0.9"/>
+<text x="46" y="468" xml:space="preserve" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">trading.position</text>
+<text x="340" y="468" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">Security postings per instrument</text>
+<text x="750" y="468" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">trigger trg_posting_syncs_position</text>
+<text x="1140" y="468" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">positions_match_ledger</text>
+<rect x="28" y="484" width="1444" height="44" rx="6" fill="#ffffff" stroke="#000000" stroke-width="0.9"/>
+<text x="46" y="512" xml:space="preserve" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">market.quote</text>
+<text x="340" y="512" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">Latest market.tick / best bid and ask</text>
+<text x="750" y="512" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">engine.refresh_top_of_book()</text>
+<text x="1140" y="512" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">no_crossed_books</text>
+<rect x="28" y="552" width="980" height="212" rx="6" fill="#e4e4e4" stroke="#000000" stroke-width="1.8"/>
+<text x="48" y="586" font-size="17" font-weight="700" fill="#000000" text-anchor="start">The one place normal form was knowingly broken, and why that is safe</text>
+<text x="48" y="618" font-size="14" font-weight="400" fill="#000000" text-anchor="start">A balance column that can drift from its own history is the classic argument against</text>
+<text x="48" y="644" font-size="14" font-weight="400" fill="#000000" text-anchor="start">storing it at all. Here the column is never the source of truth: it is a cache, the</text>
+<text x="48" y="670" font-size="14" font-weight="400" fill="#000000" text-anchor="start">journal is the truth, and ops.health_check() re-derives every balance from the journal</text>
+<text x="48" y="696" font-size="14" font-weight="400" fill="#000000" text-anchor="start">and reports any slot that disagrees. The denormalization buys a constant-time read of</text>
+<text x="48" y="722" font-size="14" font-weight="400" fill="#000000" text-anchor="start">buying power on the order path; the invariant buys back the correctness it cost.</text>
+</svg>

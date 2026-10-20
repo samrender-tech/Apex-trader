@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1740" height="1260" viewBox="0 0 1740 1260" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1740" height="1260" fill="#ffffff"/>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#2f3b4d"/></marker></defs>
+<path d="M240.0,232 C240.0,266.0 240.0,266.0 240.0,300" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="195.5" y="256.0" width="89" height="17" rx="3" fill="#ffffff"/>
+<text x="240.0" y="268.0" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : N  owns</text>
+<path d="M240.0,517 C240.0,563.5 240.0,563.5 240.0,610" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="188.5" y="553.5" width="103" height="17" rx="3" fill="#ffffff"/>
+<text x="240.0" y="565.5" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : N  places</text>
+<path d="M240.0,877 C240.0,918.5 240.0,918.5 240.0,960" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="192.0" y="908.5" width="96" height="17" rx="3" fill="#ffffff"/>
+<text x="240.0" y="920.5" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : N  fills</text>
+<path d="M840.0,207 C840.0,238.5 840.0,238.5 840.0,270" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="792.0" y="228.5" width="96" height="17" rx="3" fill="#ffffff"/>
+<text x="840.0" y="240.5" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : N  lists</text>
+<path d="M640,403.5 C640,573.5 440,573.5 440,743.5" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="478.0" y="563.5" width="124" height="17" rx="3" fill="#ffffff"/>
+<text x="540.0" y="575.5" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : N  priced in</text>
+<path d="M840.0,537 C840.0,593.5 840.0,593.5 840.0,650" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="778.0" y="593.865264" width="124" height="17" rx="3" fill="#ffffff"/>
+<text x="840.0" y="605.865264" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : 1  marked by</text>
+<path d="M840.0,537 C840.0,708.5 840.0,708.5 840.0,880" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="792.0" y="698.5" width="96" height="17" rx="3" fill="#ffffff"/>
+<text x="840.0" y="710.5" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : N  OHLCV</text>
+<path d="M440,1081.0 C440,596.0 1250,596.0 1250,111.0" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="417.6827200000001" y="893.1563199999998" width="131" height="17" rx="3" fill="#ffffff"/>
+<text x="483.1827200000001" y="905.1563199999998" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : 1  settled by</text>
+<path d="M1450.0,182 C1450.0,216.0 1450.0,216.0 1450.0,250" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="1405.5" y="206.0" width="89" height="17" rx="3" fill="#ffffff"/>
+<text x="1450.0" y="218.0" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : N  legs</text>
+<path d="M1450.0,467 C1450.0,523.5 1450.0,523.5 1450.0,580" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="1374.0" y="513.5" width="152" height="17" rx="3" fill="#ffffff"/>
+<text x="1450.0" y="525.5" font-size="11.5" fill="#2f3b4d" text-anchor="middle">N : 1  aggregates to</text>
+<path d="M440,408.5 C845.0,408.5 845.0,663.5 1250,663.5" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="1009.38112" y="621.9044799999999" width="47" height="17" rx="3" fill="#ffffff"/>
+<text x="1032.88112" y="633.9044799999999" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : N</text>
+<path d="M440,408.5 C845.0,408.5 845.0,933.5 1250,933.5" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="1053.49136" y="895.5111999999999" width="96" height="17" rx="3" fill="#ffffff"/>
+<text x="1101.49136" y="907.5111999999999" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : N  holds</text>
+<path d="M1040,403.5 C1040,668.5 1250,668.5 1250,933.5" fill="none" stroke="#2f3b4d" stroke-width="1.6" marker-end="url(#a)" opacity=".75"/>
+<rect x="1186.32784" y="751.5934399999999" width="47" height="17" rx="3" fill="#ffffff"/>
+<text x="1209.82784" y="763.5934399999999" font-size="11.5" fill="#2f3b4d" text-anchor="middle">1 : N</text>
+<rect x="40" y="40" width="400" height="192" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="40" y="40" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="40" y="66" width="400" height="8" fill="#1f6feb"/>
+<text x="53" y="63" font-size="15" font-weight="600" fill="#fff">identity.app_user</text>
+<text x="53" y="92" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">user_id</text>
+<text x="427" y="92" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK</text>
+<text x="53" y="117" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">email</text>
+<text x="427" y="117" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">AK</text>
+<text x="53" y="142" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">password_hash</text>
+<text x="53" y="167" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">full_name</text>
+<text x="53" y="192" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">role</text>
+<text x="53" y="217" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">kyc_state</text>
+<rect x="40" y="40" width="400" height="192" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="40" y="300" width="400" height="217" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="40" y="300" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="40" y="326" width="400" height="8" fill="#1f6feb"/>
+<text x="53" y="323" font-size="15" font-weight="600" fill="#fff">trading.account</text>
+<text x="53" y="352" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">account_id</text>
+<text x="427" y="352" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK</text>
+<text x="53" y="377" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">user_id</text>
+<text x="427" y="377" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<text x="53" y="402" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">account_no</text>
+<text x="427" y="402" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">AK</text>
+<text x="53" y="427" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">kind</text>
+<text x="53" y="452" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">base_currency</text>
+<text x="53" y="477" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">leverage</text>
+<text x="53" y="502" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">allow_short_selling</text>
+<rect x="40" y="300" width="400" height="217" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="40" y="610" width="400" height="267" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="40" y="610" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="40" y="636" width="400" height="8" fill="#1f6feb"/>
+<text x="53" y="633" font-size="15" font-weight="600" fill="#fff">trading.trade_order</text>
+<text x="53" y="662" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">order_id</text>
+<text x="427" y="662" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK</text>
+<text x="53" y="687" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">account_id</text>
+<text x="427" y="687" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<text x="53" y="712" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">instrument_id</text>
+<text x="427" y="712" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<text x="53" y="737" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">side</text>
+<text x="53" y="762" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">kind</text>
+<text x="53" y="787" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">quantity</text>
+<text x="53" y="812" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">limit_price</text>
+<text x="53" y="837" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">status</text>
+<text x="53" y="862" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">filled_qty</text>
+<rect x="40" y="610" width="400" height="267" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="40" y="960" width="400" height="242" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="40" y="960" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="40" y="986" width="400" height="8" fill="#1f6feb"/>
+<text x="53" y="983" font-size="15" font-weight="600" fill="#fff">trading.execution</text>
+<text x="53" y="1012" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">execution_id</text>
+<text x="427" y="1012" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK</text>
+<text x="53" y="1037" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">executed_at</text>
+<text x="427" y="1037" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK</text>
+<text x="53" y="1062" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">instrument_id</text>
+<text x="427" y="1062" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<text x="53" y="1087" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">buy_order_id</text>
+<text x="427" y="1087" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<text x="53" y="1112" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">sell_order_id</text>
+<text x="427" y="1112" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<text x="53" y="1137" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">settlement_entry_id</text>
+<text x="427" y="1137" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<text x="53" y="1162" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">price</text>
+<text x="53" y="1187" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">quantity</text>
+<rect x="40" y="960" width="400" height="242" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="640" y="40" width="400" height="167" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="640" y="40" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="640" y="66" width="400" height="8" fill="#1f6feb"/>
+<text x="653" y="63" font-size="15" font-weight="600" fill="#fff">reference.exchange</text>
+<text x="653" y="92" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">exchange_id</text>
+<text x="1027" y="92" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK</text>
+<text x="653" y="117" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">code</text>
+<text x="1027" y="117" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">AK</text>
+<text x="653" y="142" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">timezone</text>
+<text x="653" y="167" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">session_open</text>
+<text x="653" y="192" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">session_close</text>
+<rect x="640" y="40" width="400" height="167" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="640" y="270" width="400" height="267" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="640" y="270" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="640" y="296" width="400" height="8" fill="#1f6feb"/>
+<text x="653" y="293" font-size="15" font-weight="600" fill="#fff">reference.instrument</text>
+<text x="653" y="322" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">instrument_id</text>
+<text x="1027" y="322" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK</text>
+<text x="653" y="347" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">exchange_id</text>
+<text x="1027" y="347" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">AK FK</text>
+<text x="653" y="372" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">symbol</text>
+<text x="1027" y="372" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">AK</text>
+<text x="653" y="397" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">kind</text>
+<text x="653" y="422" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">currency</text>
+<text x="653" y="447" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">tick_size</text>
+<text x="653" y="472" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">lot_size</text>
+<text x="653" y="497" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">price_band_pct</text>
+<text x="653" y="522" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">trades_24x7</text>
+<rect x="640" y="270" width="400" height="267" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="640" y="650" width="400" height="167" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="640" y="650" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="640" y="676" width="400" height="8" fill="#1f6feb"/>
+<text x="653" y="673" font-size="15" font-weight="600" fill="#fff">market.quote</text>
+<text x="653" y="702" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">instrument_id</text>
+<text x="1027" y="702" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK FK</text>
+<text x="653" y="727" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">last_price</text>
+<text x="653" y="752" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">reference_price</text>
+<text x="653" y="777" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">bid</text>
+<text x="653" y="802" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">ask</text>
+<rect x="640" y="650" width="400" height="167" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="640" y="880" width="400" height="167" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="640" y="880" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="640" y="906" width="400" height="8" fill="#1f6feb"/>
+<text x="653" y="903" font-size="15" font-weight="600" fill="#fff">market.candle_1m</text>
+<text x="653" y="932" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">instrument_id</text>
+<text x="1027" y="932" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK FK</text>
+<text x="653" y="957" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">bucket_start</text>
+<text x="1027" y="957" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK</text>
+<text x="653" y="982" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">open high low close</text>
+<text x="653" y="1007" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">volume</text>
+<text x="653" y="1032" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">source</text>
+<rect x="640" y="880" width="400" height="167" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="1250" y="40" width="400" height="142" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="1250" y="40" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="1250" y="66" width="400" height="8" fill="#1f6feb"/>
+<text x="1263" y="63" font-size="15" font-weight="600" fill="#fff">ledger.journal_entry</text>
+<text x="1263" y="92" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">entry_id</text>
+<text x="1637" y="92" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK</text>
+<text x="1263" y="117" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">kind</text>
+<text x="1263" y="142" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">description</text>
+<text x="1263" y="167" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">occurred_at</text>
+<rect x="1250" y="40" width="400" height="142" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="1250" y="250" width="400" height="217" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="1250" y="250" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="1250" y="276" width="400" height="8" fill="#1f6feb"/>
+<text x="1263" y="273" font-size="15" font-weight="600" fill="#fff">ledger.posting</text>
+<text x="1263" y="302" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">posting_id</text>
+<text x="1637" y="302" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK</text>
+<text x="1263" y="327" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">entry_id</text>
+<text x="1637" y="327" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<text x="1263" y="352" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">account_id</text>
+<text x="1637" y="352" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<text x="1263" y="377" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">asset_class</text>
+<text x="1263" y="402" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">instrument_id</text>
+<text x="1637" y="402" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<text x="1263" y="427" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">amount</text>
+<text x="1263" y="452" font-size="13" fill="#117a65" font-weight="600" font-family="Consolas, monospace">currency</text>
+<text x="1637" y="452" font-size="10.5" fill="#117a65" text-anchor="end" font-weight="700">FK</text>
+<rect x="1250" y="250" width="400" height="217" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="1250" y="580" width="400" height="167" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="1250" y="580" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="1250" y="606" width="400" height="8" fill="#1f6feb"/>
+<text x="1263" y="603" font-size="15" font-weight="600" fill="#fff">ledger.balance</text>
+<text x="1263" y="632" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">account_id</text>
+<text x="1637" y="632" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">AK FK</text>
+<text x="1263" y="657" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">asset_class</text>
+<text x="1637" y="657" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">AK</text>
+<text x="1263" y="682" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">currency</text>
+<text x="1637" y="682" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">AK</text>
+<text x="1263" y="707" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">instrument_id</text>
+<text x="1637" y="707" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">AK FK</text>
+<text x="1263" y="732" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">balance</text>
+<rect x="1250" y="580" width="400" height="167" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="1250" y="850" width="400" height="167" rx="7" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<rect x="1250" y="850" width="400" height="34" rx="7" fill="#1f6feb"/>
+<rect x="1250" y="876" width="400" height="8" fill="#1f6feb"/>
+<text x="1263" y="873" font-size="15" font-weight="600" fill="#fff">trading.position</text>
+<text x="1263" y="902" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">account_id</text>
+<text x="1637" y="902" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK FK</text>
+<text x="1263" y="927" font-size="13" fill="#b9770e" font-weight="600" font-family="Consolas, monospace">instrument_id</text>
+<text x="1637" y="927" font-size="10.5" fill="#b9770e" text-anchor="end" font-weight="700">PK FK</text>
+<text x="1263" y="952" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">quantity</text>
+<text x="1263" y="977" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">avg_cost</text>
+<text x="1263" y="1002" font-size="13" fill="#1a2332" font-weight="400" font-family="Consolas, monospace">realized_pnl</text>
+<rect x="1250" y="850" width="400" height="167" rx="7" fill="none" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1716" y="1210" font-size="12.5" fill="#b9770e" text-anchor="end" font-weight="700">PK primary key   AK alternate (unique) key   <tspan fill="#117a65">FK foreign key</tspan></text>
+<text x="1716" y="1232" font-size="12" fill="#5a6676" text-anchor="end">Core entities of 38 tables. Full catalog-generated ERD: docs/er-diagram.mmd</text>
+</svg>

@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1014" viewBox="0 0 1440 1014" font-family="Times New Roman, Liberation Serif, serif">
+<rect width="1440" height="1014" fill="#ffffff"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3.4" orient="auto"><path d="M0,0 L9,3.4 L0,6.8 z" fill="#000000"/></marker></defs>
+<path d="M242.0,194 C242.0,212.0 242.0,212.0 242.0,230" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M242.0,424 C242.0,442.0 242.0,442.0 242.0,460" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M242.0,698 C242.0,716.0 242.0,716.0 242.0,734" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M720.0,172 C720.0,190.0 720.0,190.0 720.0,208" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M500,327.0 C500,453.0 462,453.0 462,579.0" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M720.0,446 C720.0,464.0 720.0,464.0 720.0,482" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M720.0,446 C720.0,557.0 720.0,557.0 720.0,668" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M462,842.0 C462,464.0 978,464.0 978,86.0" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M1198.0,150 C1198.0,168.0 1198.0,168.0 1198.0,186" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M1198.0,380 C1198.0,398.0 1198.0,398.0 1198.0,416" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M462,327.0 C720.0,327.0 720.0,491.0 978,491.0" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M462,327.0 C720.0,327.0 720.0,677.0 978,677.0" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<path d="M940,327.0 C940,502.0 978,502.0 978,677.0" fill="none" stroke="#000000" stroke-width="1.4" marker-end="url(#a)"/>
+<rect x="22" y="22" width="440" height="172" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="22" y="22" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="22" y="46" width="440" height="8" fill="#000000"/>
+<text x="35" y="44" font-size="18" font-weight="600" fill="#fff">identity.app_user</text>
+<rect x="23" y="55" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="70" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">user_id</text>
+<text x="449" y="70" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK</text>
+<rect x="23" y="77" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="92" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">email</text>
+<text x="449" y="92" font-size="13" fill="#000" text-anchor="end" font-weight="700">AK</text>
+<text x="35" y="114" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">password_hash</text>
+<text x="35" y="136" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">full_name</text>
+<text x="35" y="158" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">role</text>
+<text x="35" y="180" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">kyc_state</text>
+<rect x="22" y="22" width="440" height="172" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="22" y="230" width="440" height="194" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="22" y="230" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="22" y="254" width="440" height="8" fill="#000000"/>
+<text x="35" y="252" font-size="18" font-weight="600" fill="#fff">trading.account</text>
+<rect x="23" y="263" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="278" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">account_id</text>
+<text x="449" y="278" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK</text>
+<rect x="23" y="285" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="300" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">user_id</text>
+<text x="449" y="300" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<rect x="23" y="307" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="322" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">account_no</text>
+<text x="449" y="322" font-size="13" fill="#000" text-anchor="end" font-weight="700">AK</text>
+<text x="35" y="344" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">kind</text>
+<text x="35" y="366" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">base_currency</text>
+<text x="35" y="388" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">leverage</text>
+<text x="35" y="410" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">allow_short_selling</text>
+<rect x="22" y="230" width="440" height="194" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="22" y="460" width="440" height="238" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="22" y="460" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="22" y="484" width="440" height="8" fill="#000000"/>
+<text x="35" y="482" font-size="18" font-weight="600" fill="#fff">trading.trade_order</text>
+<rect x="23" y="493" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="508" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">order_id</text>
+<text x="449" y="508" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK</text>
+<rect x="23" y="515" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="530" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">account_id</text>
+<text x="449" y="530" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<rect x="23" y="537" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="552" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">instrument_id</text>
+<text x="449" y="552" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<text x="35" y="574" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">side</text>
+<text x="35" y="596" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">kind</text>
+<text x="35" y="618" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">quantity</text>
+<text x="35" y="640" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">limit_price</text>
+<text x="35" y="662" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">status</text>
+<text x="35" y="684" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">filled_qty</text>
+<rect x="22" y="460" width="440" height="238" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="22" y="734" width="440" height="216" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="22" y="734" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="22" y="758" width="440" height="8" fill="#000000"/>
+<text x="35" y="756" font-size="18" font-weight="600" fill="#fff">trading.execution</text>
+<rect x="23" y="767" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="782" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">execution_id</text>
+<text x="449" y="782" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK</text>
+<rect x="23" y="789" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="804" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">executed_at</text>
+<text x="449" y="804" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK</text>
+<rect x="23" y="811" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="826" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">instrument_id</text>
+<text x="449" y="826" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<rect x="23" y="833" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="848" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">buy_order_id</text>
+<text x="449" y="848" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<rect x="23" y="855" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="870" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">sell_order_id</text>
+<text x="449" y="870" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<rect x="23" y="877" width="438" height="22" fill="#f1f1f1"/>
+<text x="35" y="892" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">settlement_entry_id</text>
+<text x="449" y="892" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<text x="35" y="914" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">price</text>
+<text x="35" y="936" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">quantity</text>
+<rect x="22" y="734" width="440" height="216" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="500" y="22" width="440" height="150" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="500" y="22" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="500" y="46" width="440" height="8" fill="#000000"/>
+<text x="513" y="44" font-size="18" font-weight="600" fill="#fff">reference.exchange</text>
+<rect x="501" y="55" width="438" height="22" fill="#f1f1f1"/>
+<text x="513" y="70" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">exchange_id</text>
+<text x="927" y="70" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK</text>
+<rect x="501" y="77" width="438" height="22" fill="#f1f1f1"/>
+<text x="513" y="92" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">code</text>
+<text x="927" y="92" font-size="13" fill="#000" text-anchor="end" font-weight="700">AK</text>
+<text x="513" y="114" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">timezone</text>
+<text x="513" y="136" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">session_open</text>
+<text x="513" y="158" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">session_close</text>
+<rect x="500" y="22" width="440" height="150" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="500" y="208" width="440" height="238" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="500" y="208" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="500" y="232" width="440" height="8" fill="#000000"/>
+<text x="513" y="230" font-size="18" font-weight="600" fill="#fff">reference.instrument</text>
+<rect x="501" y="241" width="438" height="22" fill="#f1f1f1"/>
+<text x="513" y="256" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">instrument_id</text>
+<text x="927" y="256" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK</text>
+<rect x="501" y="263" width="438" height="22" fill="#f1f1f1"/>
+<text x="513" y="278" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">exchange_id</text>
+<text x="927" y="278" font-size="13" fill="#000" text-anchor="end" font-weight="700">AK FK</text>
+<rect x="501" y="285" width="438" height="22" fill="#f1f1f1"/>
+<text x="513" y="300" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">symbol</text>
+<text x="927" y="300" font-size="13" fill="#000" text-anchor="end" font-weight="700">AK</text>
+<text x="513" y="322" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">kind</text>
+<text x="513" y="344" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">currency</text>
+<text x="513" y="366" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">tick_size</text>
+<text x="513" y="388" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">lot_size</text>
+<text x="513" y="410" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">price_band_pct</text>
+<text x="513" y="432" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">trades_24x7</text>
+<rect x="500" y="208" width="440" height="238" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="500" y="482" width="440" height="150" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="500" y="482" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="500" y="506" width="440" height="8" fill="#000000"/>
+<text x="513" y="504" font-size="18" font-weight="600" fill="#fff">market.quote</text>
+<rect x="501" y="515" width="438" height="22" fill="#f1f1f1"/>
+<text x="513" y="530" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">instrument_id</text>
+<text x="927" y="530" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK FK</text>
+<text x="513" y="552" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">last_price</text>
+<text x="513" y="574" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">reference_price</text>
+<text x="513" y="596" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">bid</text>
+<text x="513" y="618" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">ask</text>
+<rect x="500" y="482" width="440" height="150" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="500" y="668" width="440" height="150" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="500" y="668" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="500" y="692" width="440" height="8" fill="#000000"/>
+<text x="513" y="690" font-size="18" font-weight="600" fill="#fff">market.candle_1m</text>
+<rect x="501" y="701" width="438" height="22" fill="#f1f1f1"/>
+<text x="513" y="716" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">instrument_id</text>
+<text x="927" y="716" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK FK</text>
+<rect x="501" y="723" width="438" height="22" fill="#f1f1f1"/>
+<text x="513" y="738" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">bucket_start</text>
+<text x="927" y="738" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK</text>
+<text x="513" y="760" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">open high low close</text>
+<text x="513" y="782" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">volume</text>
+<text x="513" y="804" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">source</text>
+<rect x="500" y="668" width="440" height="150" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="978" y="22" width="440" height="128" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="978" y="22" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="978" y="46" width="440" height="8" fill="#000000"/>
+<text x="991" y="44" font-size="18" font-weight="600" fill="#fff">ledger.journal_entry</text>
+<rect x="979" y="55" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="70" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">entry_id</text>
+<text x="1405" y="70" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK</text>
+<text x="991" y="92" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">kind</text>
+<text x="991" y="114" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">description</text>
+<text x="991" y="136" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">occurred_at</text>
+<rect x="978" y="22" width="440" height="128" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="978" y="186" width="440" height="194" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="978" y="186" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="978" y="210" width="440" height="8" fill="#000000"/>
+<text x="991" y="208" font-size="18" font-weight="600" fill="#fff">ledger.posting</text>
+<rect x="979" y="219" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="234" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">posting_id</text>
+<text x="1405" y="234" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK</text>
+<rect x="979" y="241" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="256" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">entry_id</text>
+<text x="1405" y="256" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<rect x="979" y="263" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="278" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">account_id</text>
+<text x="1405" y="278" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<text x="991" y="300" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">asset_class</text>
+<rect x="979" y="307" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="322" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">instrument_id</text>
+<text x="1405" y="322" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<text x="991" y="344" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">amount</text>
+<rect x="979" y="351" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="366" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">currency</text>
+<text x="1405" y="366" font-size="13" fill="#000" text-anchor="end" font-weight="700">FK</text>
+<rect x="978" y="186" width="440" height="194" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="978" y="416" width="440" height="150" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="978" y="416" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="978" y="440" width="440" height="8" fill="#000000"/>
+<text x="991" y="438" font-size="18" font-weight="600" fill="#fff">ledger.balance</text>
+<rect x="979" y="449" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="464" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">account_id</text>
+<text x="1405" y="464" font-size="13" fill="#000" text-anchor="end" font-weight="700">AK FK</text>
+<rect x="979" y="471" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="486" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">asset_class</text>
+<text x="1405" y="486" font-size="13" fill="#000" text-anchor="end" font-weight="700">AK</text>
+<rect x="979" y="493" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="508" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">currency</text>
+<text x="1405" y="508" font-size="13" fill="#000" text-anchor="end" font-weight="700">AK</text>
+<rect x="979" y="515" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="530" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">instrument_id</text>
+<text x="1405" y="530" font-size="13" fill="#000" text-anchor="end" font-weight="700">AK FK</text>
+<text x="991" y="552" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">balance</text>
+<rect x="978" y="416" width="440" height="150" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="978" y="602" width="440" height="150" rx="7" fill="#ffffff" stroke="#000000" stroke-width="1.6"/>
+<rect x="978" y="602" width="440" height="32" rx="7" fill="#000000"/>
+<rect x="978" y="626" width="440" height="8" fill="#000000"/>
+<text x="991" y="624" font-size="18" font-weight="600" fill="#fff">trading.position</text>
+<rect x="979" y="635" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="650" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">account_id</text>
+<text x="1405" y="650" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK FK</text>
+<rect x="979" y="657" width="438" height="22" fill="#f1f1f1"/>
+<text x="991" y="672" font-size="16" fill="#000" font-weight="600" font-family="Courier New, Liberation Mono, monospace">instrument_id</text>
+<text x="1405" y="672" font-size="13" fill="#000" text-anchor="end" font-weight="700">PK FK</text>
+<text x="991" y="694" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">quantity</text>
+<text x="991" y="716" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">avg_cost</text>
+<text x="991" y="738" font-size="16" fill="#000" font-weight="400" font-family="Courier New, Liberation Mono, monospace">realized_pnl</text>
+<rect x="978" y="602" width="440" height="150" rx="7" fill="none" stroke="#000000" stroke-width="1.6"/>
+<rect x="189.9" y="200.0" width="104.19999999999999" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="242.0" y="215.0" font-size="14" fill="#000000" text-anchor="middle">1 : N  owns</text>
+<rect x="181.7" y="430.0" width="120.6" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="242.0" y="445.0" font-size="14" fill="#000000" text-anchor="middle">1 : N  places</text>
+<rect x="185.8" y="704.0" width="112.39999999999999" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="242.0" y="719.0" font-size="14" fill="#000000" text-anchor="middle">1 : N  fills</text>
+<rect x="663.8" y="178.0" width="112.39999999999999" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="720.0" y="193.0" font-size="14" fill="#000000" text-anchor="middle">1 : N  lists</text>
+<rect x="482.77599999999995" y="460.15200000000004" width="145.2" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="555.376" y="475.15200000000004" font-size="14" fill="#000000" text-anchor="middle">1 : N  priced in</text>
+<rect x="647.4" y="454.736" width="145.2" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="720.0" y="469.736" font-size="14" fill="#000000" text-anchor="middle">1 : 1  marked by</text>
+<rect x="663.8" y="634.2455540000001" width="112.39999999999999" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="720.0" y="649.2455540000001" font-size="14" fill="#000000" text-anchor="middle">1 : N  OHLCV</text>
+<rect x="329.193896" y="700.0836680000001" width="153.39999999999998" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="405.893896" y="715.0836680000001" font-size="14" fill="#000000" text-anchor="middle">1 : 1  settled by</text>
+<rect x="1145.9" y="156.0" width="104.19999999999999" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="1198.0" y="171.0" font-size="14" fill="#000000" text-anchor="middle">1 : N  legs</text>
+<rect x="1109.0" y="386.0" width="178.0" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="1198.0" y="401.0" font-size="14" fill="#000000" text-anchor="middle">N : 1  aggregates to</text>
+<rect x="807.146428" y="456.963976" width="55.0" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="834.646428" y="471.963976" font-size="14" fill="#000000" text-anchor="middle">1 : N</text>
+<rect x="821.3734999999999" y="643.7375" width="112.39999999999999" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="877.5735" y="658.7375" font-size="14" fill="#000000" text-anchor="middle">1 : N  holds</text>
+<rect x="945.394092" y="567.76405" width="55.0" height="21" rx="3" fill="#ffffff" stroke="#000000" stroke-width="0.6"/><text x="972.894092" y="582.76405" font-size="14" fill="#000000" text-anchor="middle">1 : N</text>
+<text x="1418" y="978" font-size="15" fill="#000" text-anchor="end" font-weight="700">PK primary key AK alternate (unique) key FK foreign key</text>
+<text x="1418" y="1000" font-size="14" fill="#000" text-anchor="end">Core entities of 38 base tables. The full catalog-generated ERD is docs/er-diagram.mmd.</text>
+</svg>

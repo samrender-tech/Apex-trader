@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1500" height="800" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#2f3b4d"/></marker><marker id="aro" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#1f6feb"/></marker></defs>
+<text x="26" y="36" font-size="22" font-weight="700" fill="#1a2332" text-anchor="start">Concurrency — the proof, not the claim</text>
+<text x="26" y="62" font-size="14" font-weight="400" fill="#5a6676" text-anchor="start">An order book is a contended resource. The failure mode is the double fill: two buyers read the same resting order and both match it.</text>
+<rect x="28" y="92" width="700" height="300" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="48" y="126" font-size="17" font-weight="700" fill="#1a2332" text-anchor="start">The harness  db/test/concurrency.sh</text>
+<text x="48" y="160" xml:space="preserve" font-size="14.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">One resting SELL order:  3,000 shares @ 182.00</text>
+<text x="48" y="188" xml:space="preserve" font-size="14.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">12 independent psql sessions, 25 orders each</text>
+<text x="48" y="216" xml:space="preserve" font-size="14.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">Total demand 3,000 shares against 3,000 available</text>
+<text x="48" y="244" font-size="14.5" font-weight="400" fill="#5a6676" text-anchor="start"></text>
+<text x="48" y="272" font-size="14.5" font-weight="400" fill="#5a6676" text-anchor="start">Demand exactly equals supply, so any overfill and</text>
+<text x="48" y="300" font-size="14.5" font-weight="400" fill="#5a6676" text-anchor="start">any underfill are both visible in the result.</text>
+<rect x="772" y="92" width="700" height="300" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="792" y="126" font-size="17" font-weight="700" fill="#1a2332" text-anchor="start">The mechanism</text>
+<text x="792" y="158" xml:space="preserve" font-size="14" font-weight="400" fill="#1f6feb" text-anchor="start" font-family="Consolas, monospace">PERFORM pg_advisory_xact_lock(</text>
+<text x="792" y="182" xml:space="preserve" font-size="14" font-weight="400" fill="#1f6feb" text-anchor="start" font-family="Consolas, monospace">        hashtext(&#x27;apex_book&#x27;), p_instrument_id);</text>
+<text x="792" y="216" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start">One book at a time; different instruments never</text>
+<text x="792" y="240" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start">contend. The lock is transaction-scoped, so it is</text>
+<text x="792" y="264" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start">released by COMMIT or ROLLBACK and cannot leak.</text>
+<text x="792" y="288" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start"></text>
+<text x="792" y="312" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start">The matching SELECT takes FOR UPDATE and NOT</text>
+<text x="792" y="336" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start">SKIP LOCKED: skipping a locked order would let a</text>
+<text x="792" y="360" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start">later order jump the queue.</text>
+<text x="28" y="440" font-size="18" font-weight="700" fill="#1a2332" text-anchor="start">The result</text>
+<rect x="28.0" y="462" width="196.0" height="116" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="126.0" y="512" font-size="26" font-weight="700" fill="#1f6feb" text-anchor="middle">3,000</text>
+<text x="126.0" y="544" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="middle">shares offered</text>
+<rect x="236.0" y="462" width="196.0" height="116" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="334.0" y="512" font-size="26" font-weight="700" fill="#1f6feb" text-anchor="middle">300</text>
+<text x="334.0" y="544" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="middle">fills</text>
+<rect x="444.0" y="462" width="196.0" height="116" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="542.0" y="512" font-size="26" font-weight="700" fill="#1f6feb" text-anchor="middle">3,000</text>
+<text x="542.0" y="544" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="middle">shares traded</text>
+<rect x="652.0" y="462" width="196.0" height="116" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="750.0" y="512" font-size="26" font-weight="700" fill="#1f6feb" text-anchor="middle">0</text>
+<text x="750.0" y="544" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="middle">overfilled orders</text>
+<rect x="860.0" y="462" width="196.0" height="116" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="958.0" y="512" font-size="26" font-weight="700" fill="#1f6feb" text-anchor="middle">0</text>
+<text x="958.0" y="544" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="middle">rejected orders</text>
+<rect x="1068.0" y="462" width="196.0" height="116" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1166.0" y="512" font-size="15" font-weight="700" fill="#1f6feb" text-anchor="middle">0.00000000</text>
+<text x="1166.0" y="544" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="middle">shares created or destroyed</text>
+<rect x="1276.0" y="462" width="196.0" height="116" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1374.0" y="512" font-size="15" font-weight="700" fill="#1f6feb" text-anchor="middle">0.00000000</text>
+<text x="1374.0" y="544" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="middle">cash created or destroyed</text>
+<rect x="28" y="600" width="1444" height="172" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="48" y="634" font-size="17" font-weight="700" fill="#1a2332" text-anchor="start">And the invariants still hold afterwards</text>
+<text x="48" y="666" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">balance_cache_matches_journal     0 drifted slot(s)</text>
+<text x="48" y="688" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">every_entry_balances              0 unbalanced entry/entries</text>
+<text x="48" y="710" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">closed_system_conservation        0 non-conserved asset(s)</text>
+<text x="48" y="732" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">no_unauthorised_overdraft         0 overdrawn account(s)</text>
+<text x="48" y="754" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">every_cash_posting_has_currency   0 posting(s) without a currency</text>
+<text x="1452" y="700" font-size="20" font-weight="700" fill="#0e7c55" text-anchor="end">CONCURRENCY TEST PASSED</text>
+<text x="1452" y="726" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="end">12 sessions, no double-fill, ledger exact</text>
+</svg>

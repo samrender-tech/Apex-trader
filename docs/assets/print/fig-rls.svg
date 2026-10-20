@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1500" height="800" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#000000"/></marker><marker id="aro" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#000000"/></marker></defs>
+<text x="26" y="36" font-size="22" font-weight="700" fill="#000000" text-anchor="start">Row Level Security — authorisation that a wrong query cannot bypass</text>
+<text x="26" y="62" font-size="14" font-weight="400" fill="#000000" text-anchor="start">The same SQL text, two sessions, two answers. The restriction is on the table, not on the statement.</text>
+<rect x="28" y="86" width="1444" height="52" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="48" y="119" xml:space="preserve" font-size="16" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">SELECT symbol, quantity, market_value FROM analytics.v_portfolio ORDER BY 3 DESC;</text>
+<rect x="36" y="164" width="692" height="268" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="54" y="196" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">SET apex.current_user_id = 342</text>
+<text x="54" y="224" font-size="16" font-weight="700" fill="#000000" text-anchor="start">Samrender&#x27;s session</text>
+<rect x="50" y="252" width="664" height="38" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="0.8"/>
+<text x="66" y="277" xml:space="preserve" font-size="15" font-weight="700" fill="#000000" text-anchor="start" font-family="Consolas, monospace">V</text>
+<text x="336" y="277" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">171.00</text>
+<text x="636" y="277" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">51,057.18</text>
+<rect x="50" y="294" width="664" height="38" rx="6" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+<text x="66" y="319" xml:space="preserve" font-size="15" font-weight="700" fill="#000000" text-anchor="start" font-family="Consolas, monospace">NFLX</text>
+<text x="336" y="319" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">48.00</text>
+<text x="636" y="319" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">33,365.28</text>
+<rect x="50" y="336" width="664" height="38" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="0.8"/>
+<text x="66" y="361" xml:space="preserve" font-size="15" font-weight="700" fill="#000000" text-anchor="start" font-family="Consolas, monospace">TSLA</text>
+<text x="336" y="361" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">58.00</text>
+<text x="636" y="361" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">32,557.14</text>
+<rect x="50" y="378" width="664" height="38" rx="6" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+<text x="66" y="403" xml:space="preserve" font-size="15" font-weight="700" fill="#000000" text-anchor="start" font-family="Consolas, monospace">INTC</text>
+<text x="336" y="403" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">684.00</text>
+<text x="636" y="403" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">30,831.85</text>
+<rect x="772" y="164" width="692" height="268" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="790" y="196" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">SET apex.current_user_id = 343</text>
+<text x="790" y="224" font-size="16" font-weight="700" fill="#000000" text-anchor="start">Vartika&#x27;s session</text>
+<rect x="786" y="252" width="664" height="38" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="0.8"/>
+<text x="802" y="277" xml:space="preserve" font-size="15" font-weight="700" fill="#000000" text-anchor="start" font-family="Consolas, monospace">SPY</text>
+<text x="1072" y="277" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">87.00</text>
+<text x="1372" y="277" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">53,696.40</text>
+<rect x="786" y="294" width="664" height="38" rx="6" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+<text x="802" y="319" xml:space="preserve" font-size="15" font-weight="700" fill="#000000" text-anchor="start" font-family="Consolas, monospace">QQQ</text>
+<text x="1072" y="319" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">53.00</text>
+<text x="1372" y="319" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">35,671.65</text>
+<rect x="786" y="336" width="664" height="38" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="0.8"/>
+<text x="802" y="361" xml:space="preserve" font-size="15" font-weight="700" fill="#000000" text-anchor="start" font-family="Consolas, monospace">MSFT</text>
+<text x="1072" y="361" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">30.00</text>
+<text x="1372" y="361" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">22,536.60</text>
+<rect x="786" y="378" width="664" height="38" rx="6" fill="#ffffff" stroke="#000000" stroke-width="0.8"/>
+<text x="802" y="403" xml:space="preserve" font-size="15" font-weight="700" fill="#000000" text-anchor="start" font-family="Consolas, monospace">JPM</text>
+<text x="1072" y="403" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">71.00</text>
+<text x="1372" y="403" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="end" font-family="Consolas, monospace">17,750.00</text>
+<rect x="36" y="456" width="692" height="316" rx="6" fill="#e4e4e4" stroke="#000000" stroke-width="1.8"/>
+<text x="56" y="490" font-size="17" font-weight="700" fill="#000000" text-anchor="start">The policy</text>
+<text x="56" y="522" xml:space="preserve" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">CREATE POLICY p_position_own ON trading.position</text>
+<text x="56" y="547" xml:space="preserve" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">  FOR SELECT USING (</text>
+<text x="56" y="572" xml:space="preserve" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">    identity.current_user_is_privileged()</text>
+<text x="56" y="597" xml:space="preserve" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">    OR account_id IN (SELECT a.account_id</text>
+<text x="56" y="622" xml:space="preserve" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">                        FROM trading.account a</text>
+<text x="56" y="647" xml:space="preserve" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">                       WHERE a.user_id =</text>
+<text x="56" y="672" xml:space="preserve" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start" font-family="Consolas, monospace">                             identity.current_user_id()));</text>
+<text x="56" y="712" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">The API connects as apex_app, which owns no table —</text>
+<text x="56" y="736" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">a table owner is exempt from its own policies.</text>
+<rect x="772" y="456" width="692" height="316" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="792" y="490" font-size="17" font-weight="700" fill="#000000" text-anchor="start">The defect this caught</text>
+<text x="792" y="522" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">Every view over user data was returning every</text>
+<text x="792" y="543" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">user’s rows, while the policies beneath it read</text>
+<text x="792" y="564" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">as correct. A view executes as its OWNER, and</text>
+<text x="792" y="585" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">the owner is exempt from RLS on its own tables.</text>
+<text x="792" y="606" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start"></text>
+<text x="792" y="627" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">Fix: WITH (security_invoker = true), so the view</text>
+<text x="792" y="648" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">runs as the caller.</text>
+<text x="792" y="669" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start"></text>
+<text x="792" y="690" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">Guard: ops.assert_rls_intact() fails if a view</text>
+<text x="792" y="711" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">over a policy-protected table is ever created</text>
+<text x="792" y="732" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">without it. The repair is one line; the invariant</text>
+<text x="792" y="753" font-size="13.5" font-weight="400" fill="#000000" text-anchor="start">is what stops it coming back.</text>
+</svg>

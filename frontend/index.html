@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apex Trader</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0e14'/%3E%3Cpath d='M5 23 L12 12 L18 18 L27 7' stroke='%234d8dff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27' cy='7' r='2.6' fill='%2300c896'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<!-- Vendored locally: the project must run with no network access,
+     which matters for an offline demo and for CI. -->
+<script src="vendor/lightweight-charts.js"></script>
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+<div id="login-screen">
+  <form class="login-card" id="login-form">
+    <h1>Apex <span style="color:var(--accent)">Trader</span></h1>
+    <div class="tag">In-database exchange &middot; order book, double-entry ledger, surveillance</div>
+    <label for="email">Email</label>
+    <input id="email" type="email" autocomplete="username" placeholder="pick an account below" required>
+    <label for="password">Password</label>
+    <input id="password" type="password" autocomplete="current-password" required>
+    <div style="margin-top:18px"><button class="primary" type="submit" id="login-btn">Sign in</button></div>
+    <div id="login-error" style="color:var(--down);font-size:12px;margin-top:10px"></div>
+    <div class="demo-accounts">
+      <div class="hdr">Demo accounts</div>
+      <div id="demo-chips"></div>
+    </div>
+  </form>
+</div>
+
+<!-- ================= APP ================= -->
+<div id="app">
+  <header>
+    <div class="brand">APEX<span>/</span>TRADER<span class="sub">v2.0</span></div>
+    <nav>
+      <button data-view="trade" class="active">Trade</button>
+      <button data-view="portfolio">Portfolio</button>
+      <button data-view="history">History</button>
+      <button data-view="markets">Markets</button>
+      <button data-view="social">Strategies</button>
+      <button data-view="compliance" id="nav-compliance" hidden>Compliance</button>
+      <button data-view="about">How it works</button>
+    </nav>
+    <div class="header-right">
+      <button class="search-btn" id="search-btn" title="Search instruments  (press /)">
+        <span class="mag">⌕</span><span class="lbl">Search stocks &amp; crypto</span>
+        <kbd>/</kbd>
+      </button>
+      <span class="live-dot" id="live"><i></i><span id="live-text">connecting</span></span>
+      <select id="ccy-select" class="ccy-select" title="Display currency"></select>
+      <span class="whoami"><b id="who-name">&mdash;</b> <span class="role-badge" id="who-role"></span></span>
+      <button class="icon-btn" id="theme-btn" title="Toggle theme">◐</button>
+      <button class="icon-btn" id="logout-btn">Sign out</button>
+    </div>
+  </header>
+
+  <div class="tape-bar">
+    <div class="seg class-seg" id="class-seg">
+      <button data-class="all" class="active">All</button>
+      <button data-class="equity">Stocks</button>
+      <button data-class="etf">ETFs</button>
+      <button data-class="crypto">Crypto</button>
+      <button data-class="watch">★ Watchlist</button>
+    </div>
+    <div class="tape" id="tape"></div>
+  </div>
+
+  <main>
+    <!-- ---------- TRADE ---------- -->
+    <section class="view active" id="view-trade">
+      <div class="trade-grid">
+        <div class="cell-chart">
+          <div class="quote-strip-wrap">
+            <div class="quote-strip" id="quote-strip"></div>
+            <div class="quote-actions">
+              <button class="icon-btn star" id="star-btn" title="Add to watchlist">☆</button>
+              <button class="icon-btn" id="bell-btn" title="Create a price alert">🔔</button>
+            </div>
+          </div>
+          <div class="panel-head" style="border-top:1px solid var(--border)">
+            <span class="title">Price</span>
+            <div class="seg" id="interval-seg">
+              <button data-iv="1m">1m</button><button data-iv="5m">5m</button>
+              <button data-iv="15m">15m</button><button data-iv="1h" class="active">1h</button>
+              <button data-iv="1d">1D</button>
+            </div>
+            <span class="spacer"></span>
+            <div class="seg ind-seg" id="ind-seg" title="Indicators">
+              <button data-ind="ma" class="active">MA</button>
+              <button data-ind="bb">Bollinger</button>
+              <button data-ind="vol" class="active">Vol</button>
+              <button data-ind="rsi">RSI</button>
+            </div>
+            <button class="icon-btn" id="chart-csv" title="Export these bars as CSV">⤓</button>
+          </div>
+          <div id="chart"></div>
+          <div id="rsi-chart" hidden></div>
+        </div>
+
+        <div class="cell-book">
+          <div class="panel-head">
+            <span class="title">Depth of market</span>
+            <span class="spacer"></span>
+            <span style="font-size:10px" id="book-sym"></span>
+          </div>
+          <div class="book" id="book"></div>
+
+          <form class="ticket" id="ticket">
+            <div class="side-toggle">
+              <button type="button" class="buy active" data-side="buy">Buy</button>
+              <button type="button" class="sell" data-side="sell">Sell</button>
+            </div>
+            <div class="row">
+              <div><label>Type</label>
+                <select id="o-kind">
+                  <option value="limit">Limit</option>
+                  <option value="market">Market</option>
+                  <option value="stop">Stop</option>
+                  <option value="stop_limit">Stop limit</option>
+                  <option value="trailing_stop">Trailing stop</option>
+                  <option value="iceberg">Iceberg</option>
+                </select>
+              </div>
+              <div><label>Time in force</label>
+                <select id="o-tif">
+                  <option value="day">Day</option><option value="gtc">GTC</option>
+                  <option value="ioc">IOC</option><option value="fok">FOK</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div><label>Quantity</label><input id="o-qty" type="number" min="1" step="1" value="10"></div>
+              <div id="wrap-limit"><label>Limit price</label><input id="o-limit" type="number" step="0.01"></div>
+            </div>
+            <div class="row">
+              <div id="wrap-stop" hidden><label>Stop price</label><input id="o-stop" type="number" step="0.01"></div>
+              <div id="wrap-trail" hidden><label>Trail %</label><input id="o-trail" type="number" step="0.1" value="2"></div>
+              <div id="wrap-display" hidden><label>Display qty</label><input id="o-display" type="number" step="1" value="100"></div>
+            </div>
+            <div class="est"><span>Estimated value</span><b id="o-est">&mdash;</b></div>
+            <div class="marketability" id="o-hint"></div>
+            <button class="primary" type="submit" id="o-submit">Place buy order</button>
+            <div class="bp-line" id="bp-line"></div>
+          </form>
+        </div>
+
+        <div class="cell-bottom">
+          <div class="tabs" id="blotter-tabs">
+            <button data-tab="orders" class="active">Open orders <span class="count" id="c-orders"></span></button>
+            <button data-tab="positions">Positions <span class="count" id="c-positions"></span></button>
+            <button data-tab="fills">Fills <span class="count" id="c-fills"></span></button>
+            <button data-tab="tape">Time &amp; sales</button>
+            <button data-tab="ledger">Ledger</button>
+            <button data-tab="watchlist">★ Watchlist <span class="count" id="c-watch"></span></button>
+            <button data-tab="alerts">🔔 Alerts <span class="count" id="c-alerts"></span></button>
+            <span class="spacer"></span>
+            <button class="icon-btn" id="blotter-csv" title="Export this table as CSV">⤓</button>
+          </div>
+          <div class="table-wrap" id="blotter-body"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- PORTFOLIO ---------- -->
+    <section class="view" id="view-portfolio">
+      <div class="page">
+        <h2>Portfolio</h2>
+        <p class="lede">
+          Balances here are not stored values &mdash; they are derived from the append-only
+          double-entry journal. NAV history is snapshotted per session, so returns are
+          measured on portfolio value rather than cash flow.
+        </p>
+        <div class="metrics" id="pf-metrics"></div>
+        <div class="card">
+          <div class="panel-head"><span class="title">Equity curve &amp; drawdown</span>
+            <span class="spacer"></span><span id="pf-stats" style="font-family:var(--mono);font-size:11px"></span></div>
+          <div id="equity-chart"></div>
+        </div>
+        <div class="cols">
+          <div class="card">
+            <div class="panel-head"><span class="title">Currency wallet</span>
+              <span class="spacer"></span>
+              <span id="wallet-base" style="font:11px var(--mono)"></span></div>
+            <div class="table-wrap" id="wallet" style="max-height:200px"></div>
+            <div style="padding:12px;border-top:1px solid var(--border)">
+              <div style="font-size:11px;color:var(--text-dim);margin-bottom:8px">
+                A conversion is booked as a four-legged journal entry through the FX
+                desk, so each currency balances to zero independently.
+              </div>
+              <div style="display:grid;grid-template-columns:1fr auto 1fr auto;gap:8px;align-items:end">
+                <div><label style="font-size:10px;color:var(--text-faint);text-transform:uppercase">Amount</label>
+                  <input id="fx-amount" type="number" step="0.01" min="0" placeholder="1000"></div>
+                <div><label style="font-size:10px;color:var(--text-faint);text-transform:uppercase">From</label>
+                  <select id="fx-from" style="min-width:86px"></select></div>
+                <div><label style="font-size:10px;color:var(--text-faint);text-transform:uppercase">To</label>
+                  <select id="fx-to" style="min-width:86px"></select></div>
+                <button id="fx-go" style="width:auto;padding:8px 14px">Convert</button>
+              </div>
+              <div id="fx-preview" class="bp-line"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="panel-head"><span class="title">Holdings</span>
+              <span class="spacer"></span>
+              <button class="icon-btn" id="pf-csv" title="Export holdings as CSV">⤓</button></div>
+            <div class="table-wrap" id="pf-positions" style="max-height:340px"></div>
+          </div>
+          <div class="card">
+            <div class="panel-head"><span class="title">Allocation</span>
+              <span class="spacer"></span>
+              <span style="font:11px var(--mono);color:var(--text-faint)"
+                >by asset class &amp; concentration</span></div>
+            <div id="pf-alloc" style="padding:12px"></div>
+          </div>
+          <div class="card">
+            <div class="panel-head"><span class="title">Point-in-time reconstruction</span></div>
+            <div style="padding:12px">
+              <p style="font-size:12px;color:var(--text-dim);margin-bottom:10px">
+                Replays the journal to any past instant. A schema that mutates a balance
+                column cannot answer this &mdash; the history is gone.
+              </p>
+              <div style="display:flex;gap:8px;align-items:end">
+                <div style="flex:1"><label style="font-size:10px;color:var(--text-faint);text-transform:uppercase">As of</label>
+                  <input type="datetime-local" id="asof-input"></div>
+                <button id="asof-btn" style="width:auto;padding:8px 14px">Reconstruct</button>
+              </div>
+              <div class="table-wrap" id="asof-result" style="margin-top:12px;max-height:230px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- HISTORY ---------- -->
+    <section class="view" id="view-history">
+      <div class="page">
+        <h2>Transaction history</h2>
+        <p class="lede">
+          Every buy, sell, deposit, fee and currency conversion in one stream.
+          Each row carries the journal entry that settled it, so any line can be
+          traced straight into the double-entry ledger.
+        </p>
+        <div class="card">
+          <div class="panel-head">
+            <span class="title">Activity</span>
+            <div class="seg" id="hist-filter">
+              <button data-kind="all" class="active">All</button>
+              <button data-kind="buys">Buys</button>
+              <button data-kind="sells">Sells</button>
+              <button data-kind="fx">Conversions</button>
+              <button data-kind="cash">Cash</button>
+            </div>
+            <span class="spacer"></span>
+            <input id="hist-symbol" placeholder="filter symbol" style="width:130px;padding:4px 8px;font-size:11px">
+            <select id="hist-days" style="width:auto;padding:4px 8px;font-size:11px">
+              <option value="7">7 days</option><option value="30">30 days</option>
+              <option value="90" selected>90 days</option><option value="365">1 year</option>
+            </select>
+            <button class="icon-btn" id="hist-csv" title="Export this history as CSV">⤓</button>
+          </div>
+          <div class="table-wrap" id="history-table" style="max-height:62vh"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- MARKETS ---------- -->
+    <section class="view" id="view-markets">
+      <div class="page">
+        <h2>Market overview</h2>
+        <p class="lede">
+          Movers, sector performance and the live FX board. Cross rates are derived
+          from USD-base pairs, so USD/INR and INR/USD can never disagree.
+        </p>
+        <div class="panel-head" style="background:none;border:0;padding:0 0 12px">
+          <div class="seg" id="mk-class">
+            <button data-class="all" class="active">All assets</button>
+            <button data-class="equity">Stocks</button>
+            <button data-class="etf">ETFs</button>
+            <button data-class="crypto">Crypto</button>
+          </div>
+          <span class="spacer"></span>
+          <button class="icon-btn" id="mk-csv" title="Export the movers as CSV">⤓</button>
+        </div>
+        <div class="card">
+          <div class="panel-head"><span class="title">Digital assets &middot; 24&times;7</span>
+            <span class="spacer"></span>
+            <span style="font:11px var(--mono);color:var(--text-faint)"
+              >crypto never closes &mdash; sessions come from reference.is_instrument_open()</span></div>
+          <div class="table-wrap" id="mk-crypto"></div>
+        </div>
+        <div class="cols">
+          <div class="card"><div class="panel-head"><span class="title">Top gainers</span></div>
+            <div class="table-wrap" id="mk-gainers"></div></div>
+          <div class="card"><div class="panel-head"><span class="title">Top losers</span></div>
+            <div class="table-wrap" id="mk-losers"></div></div>
+        </div>
+        <div class="cols">
+          <div class="card"><div class="panel-head"><span class="title">Most active</span></div>
+            <div class="table-wrap" id="mk-active"></div></div>
+          <div class="card"><div class="panel-head"><span class="title">Sector performance</span></div>
+            <div class="table-wrap" id="mk-sectors"></div></div>
+        </div>
+        <div class="card">
+          <div class="panel-head"><span class="title">FX board</span>
+            <span class="spacer"></span>
+            <span style="font:11px var(--mono);color:var(--text-faint)">rates per 1 USD</span></div>
+          <div class="table-wrap" id="mk-fx"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- SOCIAL ---------- -->
+    <section class="view" id="view-social">
+      <div class="page">
+        <h2>Copy-trading strategies</h2>
+        <p class="lede">
+          Sharpe, volatility and max drawdown are computed from real NAV history with SQL
+          window functions and served from a materialized view. When a leader fills, a
+          trigger enqueues a fan-out job that workers drain with
+          <code>FOR UPDATE SKIP LOCKED</code> &mdash; the leader's order is never blocked
+          by a follower's risk check.
+        </p>
+        <div class="card">
+          <div class="panel-head"><span class="title">Leaderboard</span></div>
+          <div class="table-wrap" id="leaderboard"></div>
+        </div>
+        <div class="card">
+          <div class="panel-head"><span class="title">My subscriptions</span></div>
+          <div class="table-wrap" id="my-subs"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- COMPLIANCE ---------- -->
+    <section class="view" id="view-compliance">
+      <div class="page">
+        <h2>Surveillance &amp; operations</h2>
+        <p class="lede">
+          Every detection rule below is a single analytical SQL query over the order and
+          execution history &mdash; self-match joins, cancel-ratio window functions,
+          statistical volume outliers. Alerts are deduplicated, so scans are idempotent.
+        </p>
+        <div class="metrics" id="cp-metrics"></div>
+        <div class="cols">
+          <div class="card">
+            <div class="panel-head"><span class="title">Structural invariants</span>
+              <span class="spacer"></span>
+              <button id="hc-refresh" style="width:auto;padding:3px 9px;font-size:11px">Re-check</button></div>
+            <div id="healthcheck"></div>
+          </div>
+          <div class="card">
+            <div class="panel-head"><span class="title">Operations</span></div>
+            <div style="padding:12px;display:flex;flex-direction:column;gap:8px">
+              <button id="scan-btn">Run surveillance scan</button>
+              <button id="copy-btn">Drain copy-trade queue</button>
+              <button id="eod-btn">Run end-of-day batch</button>
+              <div id="ops-out" class="evidence" style="display:none"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="panel-head"><span class="title">Alert queue</span></div>
+          <div class="table-wrap" id="alerts"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- ABOUT ---------- -->
+    <section class="view" id="view-about">
+      <div class="page" id="about-body"></div>
+    </section>
+  </main>
+</div>
+
+<!-- ================= SEARCH ================= -->
+<!-- Searches the LISTED universe by trigram similarity and, in parallel,
+     the market-data provider. A provider hit that this venue does not
+     list yet can be imported on the spot: the instrument row is created
+     with microstructure appropriate to its asset class and its history
+     is backfilled, after which it is tradable like any other. -->
+<div class="modal-back" id="search-modal" hidden>
+  <div class="modal search-modal">
+    <div class="search-head">
+      <span class="mag">⌕</span>
+      <input id="search-input" placeholder="Apple, AAPL, bitcoin, BTC-USD…"
+             autocomplete="off" spellcheck="false">
+      <span class="search-hint" id="search-hint"></span>
+      <button class="x-btn" id="search-close">esc</button>
+    </div>
+    <div class="search-results" id="search-results"></div>
+    <div class="search-foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> move</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>⇧↵</kbd> list on this venue</span>
+      <span class="spacer"></span>
+      <span id="search-src"></span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PRICE ALERT ================= -->
+<div class="modal-back" id="alert-modal" hidden>
+  <form class="modal alert-modal" id="alert-form">
+    <div class="panel-head"><span class="title">New price alert</span>
+      <span class="spacer"></span><span class="sym" id="alert-sym"></span></div>
+    <div style="padding:14px;display:flex;flex-direction:column;gap:12px">
+      <div class="row">
+        <div><label>Condition</label>
+          <select id="alert-kind">
+            <option value="above">Price rises above</option>
+            <option value="below">Price falls below</option>
+            <option value="pct_move_up">Rises by % from now</option>
+            <option value="pct_move_down">Falls by % from now</option>
+          </select></div>
+        <div><label id="alert-thr-label">Threshold</label>
+          <input id="alert-threshold" type="number" step="0.00000001" min="0"></div>
+      </div>
+      <div class="row">
+        <div><label>Note</label><input id="alert-note" placeholder="optional"></div>
+        <div><label>Repeat</label>
+          <select id="alert-repeat">
+            <option value="false">Once, then disarm</option>
+            <option value="true">Every time (max 1/5 min)</option>
+          </select></div>
+      </div>
+      <div class="bp-line" id="alert-hint"></div>
+      <div style="display:flex;gap:8px">
+        <button class="primary" type="submit">Create alert</button>
+        <button type="button" id="alert-cancel" style="width:auto;padding:9px 16px">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- ================= SHORTCUTS ================= -->
+<div class="modal-back" id="keys-modal" hidden>
+  <div class="modal keys-modal">
+    <div class="panel-head"><span class="title">Keyboard shortcuts</span>
+      <span class="spacer"></span><button class="x-btn" id="keys-close">esc</button></div>
+    <div class="keys-grid" id="keys-grid"></div>
+  </div>
+</div>
+
+<div class="toast-area" id="toasts"></div>
+<script src="app.js"></script>
+</body>
+</html>

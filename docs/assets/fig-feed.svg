@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="660" viewBox="0 0 1560 660" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1560" height="660" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#2f3b4d"/></marker><marker id="aro" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#1f6feb"/></marker></defs>
+<text x="26" y="34" font-size="20" font-weight="700" fill="#1a2332" text-anchor="start">Market-data path — and the two guards that were added after it broke</text>
+<text x="26" y="58" font-size="13" font-weight="400" fill="#5a6676" text-anchor="start">Each guard exists because a specific defect reached the running system.</text>
+<rect x="40" y="110" width="240" height="120" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="53" y="136" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start">Yahoo Finance</text>
+<text x="53" y="160" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">quote + 1-day chart</text>
+<text x="53" y="177" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">one HTTP call per poll</text>
+<path d="M280,170 L308,170" fill="none" stroke="#2f3b4d" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="310" y="110" width="240" height="120" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="323" y="136" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start">Adapter</text>
+<text x="323" y="160" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">normalises to a tick</text>
+<text x="323" y="177" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">provider-agnostic shape</text>
+<path d="M550,170 L578,170" fill="none" stroke="#2f3b4d" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="580" y="110" width="240" height="120" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="593" y="136" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start">Divergence guard</text>
+<text x="593" y="160" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">reject if |new - mark|</text>
+<text x="593" y="177" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">exceeds DIVERGENCE_LIMIT</text>
+<path d="M820,170 L848,170" fill="none" stroke="#2f3b4d" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="850" y="110" width="240" height="120" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="863" y="136" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start">market.tick</text>
+<text x="863" y="160" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">append-only, partitioned</text>
+<text x="863" y="177" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">is_trade distinguishes a</text>
+<text x="863" y="194" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">poll from a trade</text>
+<path d="M1090,170 L1118,170" fill="none" stroke="#2f3b4d" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="1120" y="110" width="400" height="120" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1133" y="136" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start">build_candles_1m</text>
+<text x="1133" y="160" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">aggregates ticks</text>
+<text x="1133" y="177" font-size="11" font-weight="400" fill="#5a6676" text-anchor="start">source = live</text>
+<rect x="40" y="300" width="720" height="132" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="54" y="328" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">Defect 1 — a wrong price for an unprimed symbol</text>
+<text x="54" y="352" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">The worker primed its price profile once, at startup. A symbol added later fell</text>
+<text x="54" y="371" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">through to a hash-derived pseudo-profile, and ADA-USD was quoted at $57 instead</text>
+<text x="54" y="390" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">of $0.39.</text>
+<text x="54" y="409" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">Fix: lazy per-symbol priming, so a symbol is primed the first time it is polled.</text>
+<rect x="800" y="300" width="720" height="132" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="814" y="328" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">Defect 2 — live polling overwrote backfilled history</text>
+<text x="814" y="352" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">build_candles_1m() rebuilt every bucket in its window from ticks, including the</text>
+<text x="814" y="371" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">months that had been backfilled from the provider, destroying them.</text>
+<text x="814" y="390" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">Fix: migration 023 added candle_1m.source. The roller may only overwrite a</text>
+<text x="814" y="409" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">bucket it wrote itself; history marked backfill is untouchable.</text>
+<rect x="40" y="466" width="1480" height="150" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="54" y="494" font-size="14" font-weight="700" fill="#1a2332" text-anchor="start">The invariant that now proves both fixes</text>
+<text x="54" y="522" xml:space="preserve" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">history_is_marked_backfill   loaded history is protected from the tick roller</text>
+<text x="54" y="541" xml:space="preserve" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">marks_carry_no_volume        reference marks are excluded from volume</text>
+<text x="54" y="560" xml:space="preserve" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">bands_contain_their_books    every price band still contains its own order book</text>
+<text x="54" y="579" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">Each is one row of ops.health_check(). A regression stops being a silent wrong</text>
+<text x="54" y="598" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">number and becomes a failing check on the compliance console.</text>
+</svg>

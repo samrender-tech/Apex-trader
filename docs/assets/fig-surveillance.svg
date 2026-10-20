@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="800" viewBox="0 0 1500 800" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1500" height="800" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#2f3b4d"/></marker><marker id="aro" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#1f6feb"/></marker></defs>
+<text x="26" y="36" font-size="22" font-weight="700" fill="#1a2332" text-anchor="start">Market-abuse surveillance — four detections, each one analytical SQL</text>
+<text x="26" y="62" font-size="14" font-weight="400" fill="#5a6676" text-anchor="start">No rules engine, no stream processor. Each rule is a query over the order and execution history.</text>
+<rect x="28" y="96" width="1444" height="82" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="50" y="132" xml:space="preserve" font-size="17" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">WASH_TRADE</text>
+<text x="50" y="158" font-size="13" font-weight="400" fill="#1f6feb" text-anchor="start">A self-join</text>
+<text x="420" y="144" font-size="15" font-weight="400" fill="#5a6676" text-anchor="start">Self-join of execution through both order sides back to the owning user</text>
+<text x="1450" y="144" font-size="14" font-weight="700" fill="#b9770e" text-anchor="end">critical</text>
+<rect x="28" y="188" width="1444" height="82" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="50" y="224" xml:space="preserve" font-size="17" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">SPOOFING</text>
+<text x="50" y="250" font-size="13" font-weight="400" fill="#1f6feb" text-anchor="start">Window functions</text>
+<text x="420" y="236" font-size="15" font-weight="400" fill="#5a6676" text-anchor="start">Cancel-to-fill ratio per account per window, ranked against the venue</text>
+<text x="1450" y="236" font-size="14" font-weight="700" fill="#b9770e" text-anchor="end">high</text>
+<rect x="28" y="280" width="1444" height="82" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="50" y="316" xml:space="preserve" font-size="17" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">MOMENTUM_IGNITION</text>
+<text x="50" y="342" font-size="13" font-weight="400" fill="#1f6feb" text-anchor="start">LAG / LEAD</text>
+<text x="420" y="328" font-size="15" font-weight="400" fill="#5a6676" text-anchor="start">Burst of same-side aggression followed by a reversal within minutes</text>
+<text x="1450" y="328" font-size="14" font-weight="700" fill="#b9770e" text-anchor="end">high</text>
+<rect x="28" y="372" width="1444" height="82" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="50" y="408" xml:space="preserve" font-size="17" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">VOLUME_ANOMALY</text>
+<text x="50" y="434" font-size="13" font-weight="400" fill="#1f6feb" text-anchor="start">Statistical outlier</text>
+<text x="420" y="420" font-size="15" font-weight="400" fill="#5a6676" text-anchor="start">Today’s volume against a 20-day mean and standard deviation</text>
+<text x="1450" y="420" font-size="14" font-weight="700" fill="#5a6676" text-anchor="end">medium</text>
+<rect x="28" y="476" width="880" height="296" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="48" y="510" font-size="17" font-weight="700" fill="#1a2332" text-anchor="start">The wash-trade query, in outline</text>
+<text x="48" y="538" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">SELECT ba.user_id, e.instrument_id,</text>
+<text x="48" y="558" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">       count(*)                 AS trade_count,</text>
+<text x="48" y="578" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">       sum(e.quantity)          AS wash_qty,</text>
+<text x="48" y="598" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">       sum(e.price*e.quantity)  AS wash_notional,</text>
+<text x="48" y="618" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">       array_agg(e.execution_id ORDER BY e.executed_at)</text>
+<text x="48" y="638" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">  FROM trading.execution e</text>
+<text x="48" y="658" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">  JOIN trading.account ba ON ba.account_id = e.buy_account_id</text>
+<text x="48" y="678" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">  JOIN trading.account sa ON sa.account_id = e.sell_account_id</text>
+<text x="48" y="698" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace"> WHERE e.executed_at &gt; now() - p_lookback</text>
+<text x="48" y="718" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">   -- Same human on both sides, through one account or two.</text>
+<text x="48" y="738" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">   AND ba.user_id = sa.user_id</text>
+<text x="48" y="758" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace"> GROUP BY ba.user_id, e.instrument_id</text>
+<rect x="930" y="476" width="542" height="296" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="950" y="510" font-size="17" font-weight="700" fill="#b9770e" text-anchor="start">The alert it raised</text>
+<text x="950" y="542" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">rule_code      WASH_TRADE</text>
+<text x="950" y="565" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">severity       critical</text>
+<text x="950" y="588" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">score          60.0</text>
+<text x="950" y="611" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">trade_count    6</text>
+<text x="950" y="634" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">washed_qty     1,200.00</text>
+<text x="950" y="657" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">washed_notional 54,096.00</text>
+<text x="950" y="680" xml:space="preserve" font-size="13.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">state          open</text>
+<text x="950" y="708" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start">Evidence is stored as JSONB and indexed</text>
+<text x="950" y="728" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start">with GIN (jsonb_path_ops), so an alert can</text>
+<text x="950" y="748" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start">be interrogated months later. A unique</text>
+<text x="950" y="768" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start">dedupe_key makes every scan idempotent.</text>
+</svg>

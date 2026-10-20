@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="900" viewBox="0 0 1640 900" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1640" height="900" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#2f3b4d"/></marker><marker id="aro" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#1f6feb"/></marker></defs>
+<text x="26" y="34" font-size="20" font-weight="700" fill="#1a2332" text-anchor="start">Double-entry settlement — what one BUY actually writes</text>
+<text x="26" y="58" font-size="13" font-weight="400" fill="#5a6676" text-anchor="start">Alice buys 10 AAPL at 174.87 from Bob. One journal entry, four legs, two independent zero-sum checks.</text>
+<rect x="36" y="92" width="480" height="86" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="56" y="122" xml:space="preserve" font-size="15" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">ledger.journal_entry</text>
+<text x="56" y="146" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">entry_id 4812  ·  kind &#x27;trade&#x27;</text>
+<text x="56" y="166" xml:space="preserve" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">source_kind &#x27;execution&#x27;  source_id 167</text>
+<path d="M276,178 L276,212" fill="none" stroke="#2f3b4d" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="36" y="220" width="980" height="62" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="54" y="246" xml:space="preserve" font-size="13" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">ledger.posting #1</text>
+<text x="54" y="268" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">cash leaves the buyer</text>
+<text x="250" y="258" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">Alice</text>
+<text x="380" y="258" xml:space="preserve" font-size="13" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">cash</text>
+<text x="500" y="258" xml:space="preserve" font-size="13" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">—</text>
+<text x="700" y="258" font-size="15" font-weight="700" fill="#1a2332" text-anchor="end">-1,748.70</text>
+<rect x="36" y="290" width="980" height="62" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="54" y="316" xml:space="preserve" font-size="13" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">ledger.posting #2</text>
+<text x="54" y="338" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">cash reaches the seller</text>
+<text x="250" y="328" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">Bob</text>
+<text x="380" y="328" xml:space="preserve" font-size="13" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">cash</text>
+<text x="500" y="328" xml:space="preserve" font-size="13" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">—</text>
+<text x="700" y="328" font-size="15" font-weight="700" fill="#1a2332" text-anchor="end">+1,748.70</text>
+<rect x="36" y="360" width="980" height="62" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="54" y="386" xml:space="preserve" font-size="13" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">ledger.posting #3</text>
+<text x="54" y="408" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">shares reach the buyer</text>
+<text x="250" y="398" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">Alice</text>
+<text x="380" y="398" xml:space="preserve" font-size="13" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">security</text>
+<text x="500" y="398" xml:space="preserve" font-size="13" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">AAPL</text>
+<text x="700" y="398" font-size="15" font-weight="700" fill="#1a2332" text-anchor="end">+10</text>
+<rect x="36" y="430" width="980" height="62" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="54" y="456" xml:space="preserve" font-size="13" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">ledger.posting #4</text>
+<text x="54" y="478" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">shares leave the seller</text>
+<text x="250" y="468" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">Bob</text>
+<text x="380" y="468" xml:space="preserve" font-size="13" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">security</text>
+<text x="500" y="468" xml:space="preserve" font-size="13" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">AAPL</text>
+<text x="700" y="468" font-size="15" font-weight="700" fill="#1a2332" text-anchor="end">-10</text>
+<rect x="1046" y="220" width="558" height="132" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1068" y="250" font-size="15" font-weight="700" fill="#1a2332" text-anchor="start">CHECK 1 — cash</text>
+<text x="1068" y="278" xml:space="preserve" font-size="15" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">-1,748.70  +  1,748.70  =  0</text>
+<text x="1068" y="304" font-size="12" font-weight="400" fill="#5a6676" text-anchor="start">Summed over asset_class = cash,</text>
+<text x="1068" y="324" font-size="12" font-weight="400" fill="#5a6676" text-anchor="start">across every currency independently.</text>
+<rect x="1046" y="362" width="558" height="132" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1068" y="392" font-size="15" font-weight="700" fill="#1a2332" text-anchor="start">CHECK 2 — security AAPL</text>
+<text x="1068" y="420" xml:space="preserve" font-size="15" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">+10  +  (-10)  =  0</text>
+<text x="1068" y="446" font-size="12" font-weight="400" fill="#5a6676" text-anchor="start">Summed per instrument. You cannot settle</text>
+<text x="1068" y="466" font-size="12" font-weight="400" fill="#5a6676" text-anchor="start">a share deficit with dollars.</text>
+<rect x="1046" y="504" width="558" height="110" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1068" y="534" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start">Both evaluated at COMMIT</text>
+<text x="1068" y="560" xml:space="preserve" font-size="12" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">DEFERRABLE INITIALLY DEFERRED</text>
+<text x="1068" y="584" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">The entry is unbalanced while its legs are</text>
+<text x="1068" y="602" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">written. A plain CHECK would reject leg 1.</text>
+<rect x="36" y="520" width="980" height="94" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="56" y="550" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start">What is NOT written</text>
+<text x="56" y="576" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">No balance column is updated by the engine. ledger.balance and trading.position are</text>
+<text x="56" y="598" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">trigger-maintained caches of these four rows — and verify_integrity() proves they still agree.</text>
+<rect x="36" y="636" width="1568" height="236" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="56" y="668" font-size="16" font-weight="700" fill="#1a2332" text-anchor="start">Why this is the whole point</text>
+<text x="56" y="696" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">A schema with a balance column lets code write any number it likes. Nothing in the database contradicts it, so a</text>
+<text x="56" y="716" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">rounding slip, a retried request or a half-finished loop silently creates money and nobody finds out until an audit.</text>
+<text x="56" y="736" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start"></text>
+<text x="56" y="756" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">Here value cannot be created, because creating it requires an entry that does not sum to zero, and such an entry</text>
+<text x="56" y="776" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">cannot COMMIT. The guarantee is structural rather than procedural: it does not depend on the application being</text>
+<text x="56" y="796" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">correct, on the order of operations, or on anyone remembering to update the other side.</text>
+<text x="56" y="816" font-size="12.5" font-weight="400" fill="#5a6676" text-anchor="start"></text>
+<text x="56" y="836" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">Corrections work the same way. A posted entry is never updated — ledger.posting refuses UPDATE and DELETE outright.</text>
+<text x="56" y="856" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">A mistake is fixed by posting a reversing entry that points back at the original, so the audit trail keeps both.</text>
+</svg>

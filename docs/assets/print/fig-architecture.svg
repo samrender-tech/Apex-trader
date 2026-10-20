@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1140" viewBox="0 0 1040 1140" font-family="Times New Roman, Liberation Serif, serif">
+<rect width="1040" height="1140" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#000000"/></marker><marker id="aro" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#000000"/></marker></defs>
+<text x="24" y="112" font-size="13" font-weight="700" fill="#000000" text-anchor="start">PRESENTATION</text>
+<rect x="24" y="120" width="992" height="124" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.2" stroke-dasharray="4 4"/>
+<text x="1016" y="112" font-size="13" font-weight="400" fill="#000000" text-anchor="end">Browser</text>
+<rect x="38.0" y="134" width="312.0" height="96" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="52.0" y="162" font-size="16" font-weight="700" fill="#000000" text-anchor="start">Trading terminal</text>
+<text x="52.0" y="186" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Charts, depth ladder,</text>
+<text x="52.0" y="206" font-size="13" font-weight="400" fill="#000000" text-anchor="start">order ticket</text>
+<rect x="364.0" y="134" width="312.0" height="96" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="378.0" y="162" font-size="16" font-weight="700" fill="#000000" text-anchor="start">Portfolio &amp; history</text>
+<text x="378.0" y="186" font-size="13" font-weight="400" fill="#000000" text-anchor="start">NAV curve, blotter,</text>
+<text x="378.0" y="206" font-size="13" font-weight="400" fill="#000000" text-anchor="start">ledger, currencies</text>
+<rect x="690.0" y="134" width="312.0" height="96" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="704.0" y="162" font-size="16" font-weight="700" fill="#000000" text-anchor="start">Compliance console</text>
+<text x="704.0" y="186" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Alert queue, invariants,</text>
+<text x="704.0" y="206" font-size="13" font-weight="400" fill="#000000" text-anchor="start">end-of-day batch</text>
+<text x="24" y="282" font-size="13" font-weight="700" fill="#000000" text-anchor="start">SERVICE</text>
+<rect x="24" y="290" width="992" height="134" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.2" stroke-dasharray="4 4"/>
+<text x="1016" y="282" font-size="13" font-weight="400" fill="#000000" text-anchor="end">Python 3.13 / FastAPI</text>
+<rect x="38" y="304" width="475.0" height="106" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="52" y="332" font-size="16" font-weight="700" fill="#000000" text-anchor="start">REST API: 53 paths</text>
+<text x="52" y="356" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Validation, JSON shaping, JWT</text>
+<text x="52" y="376" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Every write is one call to a</text>
+<text x="52" y="396" font-size="13" font-weight="400" fill="#000000" text-anchor="start">database function. No ORM.</text>
+<rect x="527.0" y="304" width="475.0" height="106" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="541.0" y="332" font-size="16" font-weight="700" fill="#000000" text-anchor="start">WebSocket + worker</text>
+<text x="541.0" y="356" font-size="13" font-weight="400" fill="#000000" text-anchor="start">LISTEN apex_events pushes a fill</text>
+<text x="541.0" y="376" font-size="13" font-weight="400" fill="#000000" text-anchor="start">to the browser without polling.</text>
+<text x="541.0" y="396" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Yahoo adapter ingests ticks.</text>
+<text x="24" y="462" font-size="13" font-weight="700" fill="#000000" text-anchor="start">ACCESS CONTROL</text>
+<rect x="24" y="470" width="992" height="134" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.2" stroke-dasharray="4 4"/>
+<text x="1016" y="462" font-size="13" font-weight="400" fill="#000000" text-anchor="end">PostgreSQL roles, RLS, session identity</text>
+<rect x="38" y="484" width="475.0" height="106" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="52" y="512" font-size="16" font-weight="700" fill="#000000" text-anchor="start">apex_app</text>
+<text x="52" y="536" font-size="13" font-weight="400" fill="#000000" text-anchor="start">The role the API connects as.</text>
+<text x="52" y="556" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Owns no table, so RLS binds.</text>
+<text x="52" y="576" font-size="13" font-weight="400" fill="#000000" text-anchor="start">apex.current_user_id per request</text>
+<rect x="527.0" y="484" width="475.0" height="106" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="541.0" y="512" font-size="16" font-weight="700" fill="#000000" text-anchor="start">Policies and audit</text>
+<text x="541.0" y="536" font-size="13" font-weight="400" fill="#000000" text-anchor="start">24 policies over 16 tables.</text>
+<text x="541.0" y="556" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Views run security_invoker.</text>
+<text x="541.0" y="576" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Every change is logged, append-only.</text>
+<text x="24" y="642" font-size="13" font-weight="700" fill="#000000" text-anchor="start">DATA + LOGIC</text>
+<rect x="24" y="650" width="992" height="450" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.2" stroke-dasharray="4 4"/>
+<text x="1016" y="642" font-size="13" font-weight="400" fill="#000000" text-anchor="end">PostgreSQL 16</text>
+<rect x="38.0" y="664" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="52.0" y="696" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">identity</text>
+<text x="52.0" y="724" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">app_user, session</text>
+<rect x="364.0" y="664" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="378.0" y="696" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">reference</text>
+<text x="378.0" y="724" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">instrument, currency</text>
+<rect x="690.0" y="664" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="704.0" y="696" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">market</text>
+<text x="704.0" y="724" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">tick, quote, candles</text>
+<rect x="38.0" y="768" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="52.0" y="800" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">trading</text>
+<text x="52.0" y="828" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">account, order, fill</text>
+<rect x="364.0" y="768" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="378.0" y="800" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">ledger</text>
+<text x="378.0" y="828" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">journal, posting</text>
+<rect x="690.0" y="768" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="704.0" y="800" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">engine</text>
+<text x="704.0" y="828" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">submit, match, settle</text>
+<rect x="38.0" y="872" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="52.0" y="904" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">risk</text>
+<text x="52.0" y="932" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">pretrade_check, bands</text>
+<rect x="364.0" y="872" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="378.0" y="904" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">surveil</text>
+<text x="378.0" y="932" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">wash trade, spoofing</text>
+<rect x="690.0" y="872" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="704.0" y="904" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">social</text>
+<text x="704.0" y="932" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">strategy, watchlist</text>
+<rect x="38.0" y="976" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="52.0" y="1008" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">analytics</text>
+<text x="52.0" y="1036" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">v_portfolio, matviews</text>
+<rect x="364.0" y="976" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="378.0" y="1008" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">audit</text>
+<text x="378.0" y="1036" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">activity_log</text>
+<rect x="690.0" y="976" width="312.0" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="704.0" y="1008" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">ops</text>
+<text x="704.0" y="1036" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">health_check, partitions</text>
+<path d="M174,244 L174,286" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#ar)"/>
+<path d="M174,424 L174,466" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#ar)"/>
+<path d="M174,604 L174,646" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#ar)"/>
+<path d="M624,244 L624,286" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#ar)"/>
+<path d="M624,424 L624,466" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#ar)"/>
+<path d="M624,604 L624,646" fill="none" stroke="#000000" stroke-width="1.6" marker-end="url(#ar)"/>
+<text x="24" y="1126" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Every arrow is a narrowing: the browser may ask, the API may call, the role may read, but only the engine may trade.</text>
+</svg>

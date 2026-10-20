@@ -1,0 +1,471 @@
+erDiagram
+    analytics__account_snapshot {
+        bigint account_id "PK,FK"
+        date as_of "PK"
+        money_amt cash
+        money_amt securities_value
+        money_amt nav
+        money_amt realized_pnl_cum
+        integer position_count
+    }
+    audit__activity_log {
+        bigint log_id "PK"
+        text table_schema
+        text table_name
+        text operation
+        text row_key
+        jsonb old_row
+        jsonb new_row
+        text_arr changed_fields
+        bigint acted_by
+        text db_user
+        inet client_addr
+        bigint txid
+        timestamp_with_time_zone acted_at
+    }
+    identity__app_user {
+        bigint user_id "PK"
+        uuid public_id
+        email_addr email
+        text password_hash
+        text full_name
+        text phone
+        date date_of_birth
+        character country_code
+        identity_user_role role
+        identity_kyc_status kyc_state
+        timestamp_with_time_zone kyc_verified_at
+        text totp_secret
+        boolean is_active
+        smallint failed_logins
+        timestamp_with_time_zone locked_until
+        timestamp_with_time_zone last_login_at
+    }
+    identity__login_attempt {
+        bigint attempt_id "PK"
+        text email_tried
+        bigint user_id "FK"
+        boolean succeeded
+        text reason
+        inet ip_address
+        timestamp_with_time_zone attempted_at
+    }
+    identity__user_session {
+        uuid session_id "PK"
+        bigint user_id "FK"
+        text token_hash
+        timestamp_with_time_zone issued_at
+        timestamp_with_time_zone expires_at
+        timestamp_with_time_zone revoked_at
+        inet ip_address
+        text user_agent
+    }
+    ledger__balance {
+        bigint account_id "FK"
+        ledger_asset_class asset_class
+        integer instrument_id "FK"
+        money_amt balance
+        character currency
+    }
+    ledger__journal_entry {
+        bigint entry_id "PK"
+        ledger_entry_kind kind
+        timestamp_with_time_zone occurred_at
+        text description
+        text source_kind
+        bigint source_id
+        bigint reverses_entry_id "FK"
+        bigint created_by "FK"
+    }
+    ledger__posting {
+        bigint posting_id "PK"
+        bigint entry_id "FK"
+        bigint account_id "FK"
+        ledger_asset_class asset_class
+        integer instrument_id "FK"
+        money_amt amount
+        text memo
+        character currency "FK"
+    }
+    market__candle_1m {
+        integer instrument_id "PK,FK"
+        timestamp_with_time_zone bucket_start "PK"
+        price_amt open
+        price_amt high
+        price_amt low
+        price_amt close
+        qty_amt0 volume
+        integer trade_count
+        numeric vwap
+        text source
+    }
+    market__quote {
+        integer instrument_id "PK,FK"
+        numeric bid
+        qty_amt0 bid_size
+        numeric ask
+        qty_amt0 ask_size
+        numeric last_price
+        qty_amt0 last_size
+        numeric day_open
+        numeric day_high
+        numeric day_low
+        numeric prev_close
+        qty_amt0 day_volume
+        numeric reference_price
+    }
+    market__tick {
+        bigint tick_id "PK"
+        integer instrument_id "PK,FK"
+        timestamp_with_time_zone ts "PK"
+        price_amt price
+        qty_amt0 volume
+        text source
+        boolean is_trade
+    }
+    ops__config {
+        text key "PK"
+        numeric value
+        text description
+    }
+    ops__job_run {
+        bigint run_id "PK"
+        text job_name
+        timestamp_with_time_zone started_at
+        timestamp_with_time_zone finished_at
+        boolean succeeded
+        jsonb detail
+        text error_text
+        interval duration
+    }
+    ops__schema_migration {
+        text filename "PK"
+        text checksum
+        timestamp_with_time_zone applied_at
+        integer duration_ms
+        boolean baselined
+    }
+    reference__corporate_action {
+        bigint action_id "PK"
+        integer instrument_id "FK"
+        reference_ca_kind kind
+        date ex_date
+        date record_date
+        date pay_date
+        numeric ratio_from
+        numeric ratio_to
+        money_amt cash_per_share
+        boolean is_applied
+        timestamp_with_time_zone applied_at
+        timestamp_with_time_zone announced_at
+    }
+    reference__currency {
+        character code "PK"
+        text name
+        text symbol
+        smallint minor_units
+        boolean is_active
+        smallint display_order
+    }
+    reference__exchange {
+        smallint exchange_id "PK"
+        text code
+        text name
+        character country_code
+        text timezone
+        currency_code currency
+        time_without_time_zone session_open
+        time_without_time_zone session_close
+    }
+    reference__fx_rate {
+        character base_ccy "PK,FK"
+        character quote_ccy "PK,FK"
+        timestamp_with_time_zone as_of "PK"
+        numeric rate
+        text source
+    }
+    reference__instrument {
+        integer instrument_id "PK"
+        symbol_code symbol
+        smallint exchange_id "FK"
+        character isin
+        text name
+        reference_instrument_kind kind
+        text sector
+        text industry
+        currency_code currency
+        qty_amt lot_size
+        price_amt tick_size
+        pct price_band_pct
+        bigint shares_outstanding
+        boolean is_tradable
+        boolean is_shortable
+        date listed_on
+        date delisted_on
+        jsonb metadata
+        boolean trades_24x7
+    }
+    reference__trading_session {
+        smallint exchange_id "PK,FK"
+        date session_date "PK"
+        boolean is_trading_day
+        timestamp_with_time_zone open_ts
+        timestamp_with_time_zone close_ts
+        text note
+    }
+    risk__alert_fire {
+        bigint fire_id "PK"
+        bigint alert_id "FK"
+        timestamp_with_time_zone fired_at
+        numeric price
+        jsonb detail
+    }
+    risk__margin_call {
+        bigint call_id "PK"
+        bigint account_id "FK"
+        timestamp_with_time_zone issued_at
+        money_amt nav
+        money_amt margin_used
+        pct equity_pct
+        pct required_pct
+        money_amt shortfall
+        timestamp_with_time_zone cured_at
+        timestamp_with_time_zone liquidated_at
+    }
+    risk__price_alert {
+        bigint alert_id "PK"
+        bigint user_id "FK"
+        integer instrument_id "FK"
+        risk_alert_kind kind
+        numeric threshold
+        numeric reference_price
+        text note
+        boolean is_active
+        boolean repeat_alert
+        timestamp_with_time_zone expires_at
+        timestamp_with_time_zone last_fired_at
+        integer fire_count
+        timestamp_with_time_zone archived_at
+    }
+    risk__risk_limit {
+        bigint account_id "PK,FK"
+        money_amt max_order_notional
+        pct max_position_pct_nav
+        money_amt max_daily_loss
+        integer max_open_orders
+        integer max_orders_per_minute
+        risk_breach_action breach_action
+    }
+    risk__trading_halt {
+        bigint halt_id "PK"
+        integer instrument_id "FK"
+        timestamp_with_time_zone halted_from
+        timestamp_with_time_zone halted_until
+        risk_halt_reason reason
+        text detail
+        numeric reference_price
+        bigint created_by "FK"
+    }
+    social__copy_link {
+        bigint link_id "PK"
+        bigint strategy_id "FK"
+        bigint subscription_id "FK"
+        bigint leader_execution_id
+        bigint follower_order_id "FK"
+    }
+    social__copy_queue {
+        bigint job_id "PK"
+        bigint execution_id
+        bigint strategy_id "FK"
+        integer instrument_id "FK"
+        trading_order_side side
+        qty_amt quantity
+        price_amt price
+        timestamp_with_time_zone enqueued_at
+        timestamp_with_time_zone processed_at
+        smallint attempts
+        text last_error
+    }
+    social__copy_subscription {
+        bigint subscription_id "PK"
+        bigint strategy_id "FK"
+        bigint account_id "FK"
+        pct allocation_pct
+        money_amt max_trade_notional
+        social_sub_status status
+        timestamp_with_time_zone subscribed_at
+        timestamp_with_time_zone cancelled_at
+    }
+    social__follow {
+        bigint follower_user_id "PK,FK"
+        bigint strategy_id "PK,FK"
+        timestamp_with_time_zone followed_at
+    }
+    social__strategy {
+        bigint strategy_id "PK"
+        bigint owner_user_id "FK"
+        bigint source_account_id "FK"
+        text name
+        text slug
+        text description
+        social_visibility visibility
+        bps fee_bps
+        boolean is_active
+    }
+    social__watchlist {
+        bigint watchlist_id "PK"
+        bigint user_id "FK"
+        text name
+        boolean is_default
+    }
+    social__watchlist_item {
+        bigint watchlist_id "PK,FK"
+        integer instrument_id "PK,FK"
+        smallint position
+        text note
+        timestamp_with_time_zone added_at
+    }
+    surveil__alert {
+        bigint alert_id "PK"
+        text rule_code "FK"
+        surveil_severity severity
+        bigint account_id "FK"
+        integer instrument_id "FK"
+        timestamp_with_time_zone detected_at
+        timestamp_with_time_zone window_from
+        timestamp_with_time_zone window_to
+        jsonb evidence
+        numeric score
+        surveil_alert_state state
+        bigint reviewed_by "FK"
+        timestamp_with_time_zone reviewed_at
+        text review_note
+        text dedupe_key
+    }
+    surveil__rule {
+        text rule_code "PK"
+        text name
+        text description
+        surveil_severity severity
+        boolean is_enabled
+        jsonb params
+    }
+    trading__account {
+        bigint account_id "PK"
+        text account_no
+        bigint user_id "FK"
+        trading_account_kind kind
+        trading_account_status status
+        currency_code base_currency
+        numeric leverage
+        pct maintenance_margin_pct
+        boolean is_system
+        text system_code
+        boolean allows_negative_cash
+        timestamp_with_time_zone opened_at
+        timestamp_with_time_zone closed_at
+        boolean allow_short_selling
+    }
+    trading__execution {
+        bigint execution_id "PK"
+        timestamp_with_time_zone executed_at "PK"
+        integer instrument_id "FK"
+        price_amt price
+        qty_amt quantity
+        bigint buy_order_id "FK"
+        bigint sell_order_id "FK"
+        bigint buy_account_id "FK"
+        bigint sell_account_id "FK"
+        trading_order_side aggressor_side
+        money_amt buy_fee
+        money_amt sell_fee
+        bigint settlement_entry_id "FK"
+    }
+    trading__position {
+        bigint account_id "PK,FK"
+        integer instrument_id "PK,FK"
+        money_amt quantity
+        numeric avg_cost
+        money_amt realized_pnl
+        timestamp_with_time_zone opened_at
+    }
+    trading__trade_order {
+        bigint order_id "PK"
+        uuid client_order_id
+        bigint seq_no
+        bigint account_id "FK"
+        integer instrument_id "FK"
+        trading_order_side side
+        trading_order_kind kind
+        trading_time_in_force tif
+        qty_amt quantity
+        numeric limit_price
+        numeric stop_price
+        pct trail_pct
+        numeric peak_price
+        numeric display_qty
+        qty_amt0 filled_qty
+        numeric leaves_qty
+        numeric avg_fill_price
+        trading_order_status status
+        boolean stop_armed
+        text reject_reason
+        bigint parent_order_id "FK"
+        bigint source_strategy_id "FK"
+        timestamp_with_time_zone placed_at
+        timestamp_with_time_zone expires_at
+    }
+    trading__account ||--o{ analytics__account_snapshot : ""
+    identity__app_user |o--o{ identity__login_attempt : ""
+    identity__app_user ||--o{ identity__user_session : ""
+    reference__instrument |o--o{ ledger__balance : ""
+    trading__account ||--o{ ledger__balance : ""
+    ledger__journal_entry |o--o{ ledger__journal_entry : ""
+    identity__app_user |o--o{ ledger__journal_entry : ""
+    ledger__journal_entry ||--o{ ledger__posting : ""
+    reference__currency |o--o{ ledger__posting : ""
+    reference__instrument |o--o{ ledger__posting : ""
+    trading__account ||--o{ ledger__posting : ""
+    reference__instrument ||--o{ market__candle_1m : ""
+    reference__instrument ||--o{ market__quote : ""
+    reference__instrument ||--o{ market__tick : ""
+    reference__instrument ||--o{ reference__corporate_action : ""
+    reference__currency ||--o{ reference__fx_rate : ""
+    reference__exchange ||--o{ reference__instrument : ""
+    reference__exchange ||--o{ reference__trading_session : ""
+    risk__price_alert ||--o{ risk__alert_fire : ""
+    trading__account ||--o{ risk__margin_call : ""
+    reference__instrument ||--o{ risk__price_alert : ""
+    identity__app_user ||--o{ risk__price_alert : ""
+    trading__account ||--o{ risk__risk_limit : ""
+    reference__instrument ||--o{ risk__trading_halt : ""
+    identity__app_user |o--o{ risk__trading_halt : ""
+    trading__trade_order ||--o{ social__copy_link : ""
+    social__strategy ||--o{ social__copy_link : ""
+    social__copy_subscription ||--o{ social__copy_link : ""
+    reference__instrument ||--o{ social__copy_queue : ""
+    social__strategy ||--o{ social__copy_queue : ""
+    trading__account ||--o{ social__copy_subscription : ""
+    social__strategy ||--o{ social__copy_subscription : ""
+    identity__app_user ||--o{ social__follow : ""
+    social__strategy ||--o{ social__follow : ""
+    identity__app_user ||--o{ social__strategy : ""
+    trading__account ||--o{ social__strategy : ""
+    identity__app_user ||--o{ social__watchlist : ""
+    reference__instrument ||--o{ social__watchlist_item : ""
+    social__watchlist ||--o{ social__watchlist_item : ""
+    identity__app_user |o--o{ surveil__alert : ""
+    reference__instrument |o--o{ surveil__alert : ""
+    trading__account |o--o{ surveil__alert : ""
+    surveil__rule ||--o{ surveil__alert : ""
+    identity__app_user |o--o{ trading__account : ""
+    trading__account ||--o{ trading__execution : ""
+    ledger__journal_entry |o--o{ trading__execution : ""
+    reference__instrument ||--o{ trading__execution : ""
+    trading__trade_order ||--o{ trading__execution : ""
+    trading__account ||--o{ trading__position : ""
+    reference__instrument ||--o{ trading__position : ""
+    social__strategy |o--o{ trading__trade_order : ""
+    trading__account ||--o{ trading__trade_order : ""
+    reference__instrument ||--o{ trading__trade_order : ""
+    trading__trade_order |o--o{ trading__trade_order : ""

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1070" viewBox="0 0 1040 1070" font-family="Times New Roman, Liberation Serif, serif">
+<rect width="1040" height="1070" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#000000"/></marker><marker id="aro" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#000000"/></marker></defs>
+<rect x="24" y="110" width="992" height="76" rx="6" fill="#e4e4e4" stroke="#000000" stroke-width="1.8"/>
+<text x="42" y="140" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">ledger.journal_entry</text>
+<text x="42" y="166" xml:space="preserve" font-size="13" font-weight="400" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">entry_id 4812  ·  kind &#x27;trade&#x27;  ·  source_kind &#x27;execution&#x27;  ·  source_id 167</text>
+<path d="M84,186 L84,210" fill="none" stroke="#000000" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="24" y="214" width="992" height="64" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="42" y="242" xml:space="preserve" font-size="14" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">ledger.posting #1</text>
+<text x="42" y="264" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">cash leaves the buyer</text>
+<text x="324" y="254" font-size="15" font-weight="700" fill="#000000" text-anchor="start">Alice</text>
+<text x="444" y="254" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">cash</text>
+<text x="594" y="254" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">-</text>
+<text x="998" y="254" font-size="17" font-weight="700" fill="#000000" text-anchor="end">-1,748.70</text>
+<rect x="24" y="286" width="992" height="64" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="42" y="314" xml:space="preserve" font-size="14" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">ledger.posting #2</text>
+<text x="42" y="336" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">cash reaches the seller</text>
+<text x="324" y="326" font-size="15" font-weight="700" fill="#000000" text-anchor="start">Bob</text>
+<text x="444" y="326" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">cash</text>
+<text x="594" y="326" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">-</text>
+<text x="998" y="326" font-size="17" font-weight="700" fill="#000000" text-anchor="end">+1,748.70</text>
+<rect x="24" y="358" width="992" height="64" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="42" y="386" xml:space="preserve" font-size="14" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">ledger.posting #3</text>
+<text x="42" y="408" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">shares reach the buyer</text>
+<text x="324" y="398" font-size="15" font-weight="700" fill="#000000" text-anchor="start">Alice</text>
+<text x="444" y="398" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">security</text>
+<text x="594" y="398" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">AAPL</text>
+<text x="998" y="398" font-size="17" font-weight="700" fill="#000000" text-anchor="end">+10</text>
+<rect x="24" y="430" width="992" height="64" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="42" y="458" xml:space="preserve" font-size="14" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">ledger.posting #4</text>
+<text x="42" y="480" font-size="12.5" font-weight="400" fill="#000000" text-anchor="start">shares leave the seller</text>
+<text x="324" y="470" font-size="15" font-weight="700" fill="#000000" text-anchor="start">Bob</text>
+<text x="444" y="470" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">security</text>
+<text x="594" y="470" xml:space="preserve" font-size="14" font-weight="400" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">AAPL</text>
+<text x="998" y="470" font-size="17" font-weight="700" fill="#000000" text-anchor="end">-10</text>
+<rect x="24" y="510" width="488.0" height="128" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="42" y="542" font-size="16" font-weight="700" fill="#000000" text-anchor="start">CHECK 1: cash</text>
+<text x="42" y="572" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">-1,748.70  +  1,748.70  =  0</text>
+<text x="42" y="600" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Summed over asset_class = cash,</text>
+<text x="42" y="620" font-size="13" font-weight="400" fill="#000000" text-anchor="start">across every currency independently.</text>
+<rect x="528.0" y="510" width="488.0" height="128" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="546.0" y="542" font-size="16" font-weight="700" fill="#000000" text-anchor="start">CHECK 2: security AAPL</text>
+<text x="546.0" y="572" xml:space="preserve" font-size="16" font-weight="700" fill="#000000" text-anchor="start" font-family="Courier New, Liberation Mono, monospace">+10  +  (-10)  =  0</text>
+<text x="546.0" y="600" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Summed per instrument. A share</text>
+<text x="546.0" y="620" font-size="13" font-weight="400" fill="#000000" text-anchor="start">deficit cannot be settled with cash.</text>
+<rect x="24" y="654" width="992" height="96" rx="6" fill="#e4e4e4" stroke="#000000" stroke-width="1.8"/>
+<text x="42" y="686" font-size="16" font-weight="700" fill="#000000" text-anchor="start">Both evaluated at COMMIT (DEFERRABLE INITIALLY DEFERRED)</text>
+<text x="42" y="714" font-size="13" font-weight="400" fill="#000000" text-anchor="start">The entry is unbalanced while its legs are being written. A plain CHECK would reject leg 1</text>
+<text x="42" y="734" font-size="13" font-weight="400" fill="#000000" text-anchor="start">and make a correct transaction impossible.</text>
+<rect x="24" y="766" width="992" height="92" rx="6" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
+<text x="42" y="798" font-size="16" font-weight="700" fill="#000000" text-anchor="start">What is NOT written</text>
+<text x="42" y="824" font-size="13" font-weight="400" fill="#000000" text-anchor="start">No balance column is updated by the engine. ledger.balance and trading.position are</text>
+<text x="42" y="844" font-size="13" font-weight="400" fill="#000000" text-anchor="start">trigger-maintained caches of these four rows, and verify_integrity() proves they still agree.</text>
+<rect x="24" y="874" width="992" height="164" rx="6" fill="#f2f2f2" stroke="#000000" stroke-width="1.8"/>
+<text x="42" y="906" font-size="17" font-weight="700" fill="#000000" text-anchor="start">Why this is the whole point</text>
+<text x="42" y="934" font-size="13" font-weight="400" fill="#000000" text-anchor="start">A schema with a balance column lets code write any number it likes. Nothing in the</text>
+<text x="42" y="954" font-size="13" font-weight="400" fill="#000000" text-anchor="start">database contradicts it, so a rounding slip or a retried request silently creates money.</text>
+<text x="42" y="974" font-size="13" font-weight="400" fill="#000000" text-anchor="start">Here value cannot be created, because creating it requires an entry that does not sum</text>
+<text x="42" y="994" font-size="13" font-weight="400" fill="#000000" text-anchor="start">to zero, and such an entry cannot COMMIT. A posted entry is never updated: a mistake</text>
+<text x="42" y="1014" font-size="13" font-weight="400" fill="#000000" text-anchor="start">is fixed by a reversing entry, so the audit trail keeps both.</text>
+</svg>

@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="800" viewBox="0 0 1640 800" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1640" height="800" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#2f3b4d"/></marker><marker id="aro" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#1f6feb"/></marker></defs>
+<text x="26" y="34" font-size="20" font-weight="700" fill="#1a2332" text-anchor="start">Physical design — partitioning, indexing and the evidence for each</text>
+<text x="26" y="58" font-size="13" font-weight="400" fill="#5a6676" text-anchor="start">Every claim below is produced by EXPLAIN ANALYZE in db/bench/explain.sql, not asserted.</text>
+<text x="36" y="100" font-size="16" font-weight="700" fill="#1a2332" text-anchor="start">Declarative range partitioning</text>
+<rect x="36" y="116" width="760" height="196" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="56" y="146" xml:space="preserve" font-size="13" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">market.candle_1m  PARTITION BY RANGE (bucket_start)</text>
+<rect x="56" y="166" width="62" height="56" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="87.0" y="190" xml:space="preserve" font-size="9.5" font-weight="700" fill="#1a2332" text-anchor="middle" font-family="Consolas, monospace">2026_04</text>
+<text x="87.0" y="208" font-size="8.5" font-weight="400" fill="#5a6676" text-anchor="middle">pruned</text>
+<rect x="124" y="166" width="62" height="56" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="155.0" y="190" xml:space="preserve" font-size="9.5" font-weight="700" fill="#1a2332" text-anchor="middle" font-family="Consolas, monospace">2026_05</text>
+<text x="155.0" y="208" font-size="8.5" font-weight="400" fill="#5a6676" text-anchor="middle">pruned</text>
+<rect x="192" y="166" width="62" height="56" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="223.0" y="190" xml:space="preserve" font-size="9.5" font-weight="700" fill="#1a2332" text-anchor="middle" font-family="Consolas, monospace">2026_06</text>
+<text x="223.0" y="208" font-size="8.5" font-weight="400" fill="#5a6676" text-anchor="middle">pruned</text>
+<rect x="260" y="166" width="62" height="56" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="291.0" y="190" xml:space="preserve" font-size="9.5" font-weight="700" fill="#1a2332" text-anchor="middle" font-family="Consolas, monospace">2026_07</text>
+<text x="291.0" y="208" font-size="8.5" font-weight="400" fill="#5a6676" text-anchor="middle">pruned</text>
+<rect x="328" y="166" width="62" height="56" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="359.0" y="190" xml:space="preserve" font-size="9.5" font-weight="700" fill="#1a2332" text-anchor="middle" font-family="Consolas, monospace">2026_08</text>
+<text x="359.0" y="208" font-size="8.5" font-weight="400" fill="#5a6676" text-anchor="middle">pruned</text>
+<rect x="396" y="166" width="62" height="56" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="427.0" y="190" xml:space="preserve" font-size="9.5" font-weight="700" fill="#1a2332" text-anchor="middle" font-family="Consolas, monospace">2026_09</text>
+<text x="427.0" y="208" font-size="8.5" font-weight="400" fill="#5a6676" text-anchor="middle">pruned</text>
+<rect x="464" y="166" width="62" height="56" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="495.0" y="190" xml:space="preserve" font-size="9.5" font-weight="700" fill="#1a2332" text-anchor="middle" font-family="Consolas, monospace">2026_10</text>
+<text x="495.0" y="208" font-size="8.5" font-weight="400" fill="#5a6676" text-anchor="middle">scan</text>
+<rect x="532" y="166" width="62" height="56" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="563.0" y="190" xml:space="preserve" font-size="9.5" font-weight="700" fill="#1a2332" text-anchor="middle" font-family="Consolas, monospace">2026_11</text>
+<text x="563.0" y="208" font-size="8.5" font-weight="400" fill="#5a6676" text-anchor="middle">pruned</text>
+<rect x="600" y="166" width="62" height="56" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="631.0" y="190" xml:space="preserve" font-size="9.5" font-weight="700" fill="#1a2332" text-anchor="middle" font-family="Consolas, monospace">2026_12</text>
+<text x="631.0" y="208" font-size="8.5" font-weight="400" fill="#5a6676" text-anchor="middle">pruned</text>
+<rect x="668" y="166" width="62" height="56" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="699.0" y="190" xml:space="preserve" font-size="9.5" font-weight="700" fill="#1a2332" text-anchor="middle" font-family="Consolas, monospace">2027_01</text>
+<text x="699.0" y="208" font-size="8.5" font-weight="400" fill="#5a6676" text-anchor="middle">pruned</text>
+<text x="56" y="250" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">A one-day chart query reads ONE monthly partition.</text>
+<text x="56" y="272" xml:space="preserve" font-size="12.5" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">EXPLAIN ANALYZE: 1 partition opened, 10 pruned at plan time</text>
+<text x="56" y="294" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">ops.ensure_time_partitions() creates them ahead of time; health_check() warns at &lt;2 months runway.</text>
+<text x="826" y="100" font-size="16" font-weight="700" fill="#1a2332" text-anchor="start">Index strategy — one type per access pattern</text>
+<rect x="826" y="116" width="778" height="74" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="846" y="140" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">B-tree composite</text>
+<text x="846" y="158" xml:space="preserve" font-size="10.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">trade_order(instrument_id, side,</text>
+<text x="846" y="173" xml:space="preserve" font-size="10.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">  limit_price, sequence_no)</text>
+<text x="1180" y="144" font-size="11" font-weight="400" fill="#1a2332" text-anchor="start">The order book IS this index. Matching reads it in order, so</text>
+<text x="1180" y="162" font-size="11" font-weight="400" fill="#1a2332" text-anchor="start">no sort node appears — 0.043 ms.</text>
+<rect x="826" y="198" width="778" height="62" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="846" y="222" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">BRIN</text>
+<text x="846" y="240" xml:space="preserve" font-size="10.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">tick(ts), candle_1m(bucket_start)</text>
+<text x="1180" y="226" font-size="11" font-weight="400" fill="#1a2332" text-anchor="start">Append-only time series: values correlate with physical</text>
+<text x="1180" y="244" font-size="11" font-weight="400" fill="#1a2332" text-anchor="start">order. 24 kB against 4,248 kB for B-tree.</text>
+<rect x="826" y="268" width="778" height="74" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="846" y="292" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">Partial</text>
+<text x="846" y="310" xml:space="preserve" font-size="10.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">trade_order WHERE status IN</text>
+<text x="846" y="325" xml:space="preserve" font-size="10.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">  (&#x27;working&#x27;,&#x27;partially_filled&#x27;)</text>
+<text x="1180" y="296" font-size="11" font-weight="400" fill="#1a2332" text-anchor="start">Only live orders are ever matched against. The index excludes</text>
+<text x="1180" y="314" font-size="11" font-weight="400" fill="#1a2332" text-anchor="start">the 90% that are done.</text>
+<rect x="826" y="350" width="778" height="62" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="846" y="374" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">GIN + trigram</text>
+<text x="846" y="392" xml:space="preserve" font-size="10.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">instrument USING gin (name gin_trgm_ops)</text>
+<text x="1180" y="378" font-size="11" font-weight="400" fill="#1a2332" text-anchor="start">Fuzzy search: &quot;aple&quot; finds AAPL. Exact-match B-tree cannot do</text>
+<text x="1180" y="396" font-size="11" font-weight="400" fill="#1a2332" text-anchor="start">this at all.</text>
+<rect x="826" y="420" width="778" height="74" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="846" y="444" font-size="13.5" font-weight="700" fill="#1a2332" text-anchor="start">Covering (INCLUDE)</text>
+<text x="846" y="462" xml:space="preserve" font-size="10.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">position(account_id) INCLUDE</text>
+<text x="846" y="477" xml:space="preserve" font-size="10.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">  (quantity, avg_cost)</text>
+<text x="1180" y="448" font-size="11" font-weight="400" fill="#1a2332" text-anchor="start">Index-only scan — the heap is never touched, so zero heap</text>
+<text x="1180" y="466" font-size="11" font-weight="400" fill="#1a2332" text-anchor="start">fetches.</text>
+<rect x="36" y="330" width="760" height="268" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="56" y="362" font-size="16" font-weight="700" fill="#1a2332" text-anchor="start">Measured latency, end to end</text>
+<text x="56" y="406" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">Pre-trade risk check</text>
+<rect x="340" y="392" width="95.9047619047619" height="20" rx="3" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="445.9047619047619" y="407" font-size="12" font-weight="700" fill="#1a2332" text-anchor="start">1.06 ms</text>
+<text x="56" y="442" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">Order that rests, no fill</text>
+<rect x="340" y="428" width="225.28571428571428" height="20" rx="3" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="575.2857142857142" y="443" font-size="12" font-weight="700" fill="#1a2332" text-anchor="start">2.49 ms</text>
+<text x="56" y="478" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">Market order: match + settle</text>
+<rect x="340" y="464" width="335.66666666666663" height="20" rx="3" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="685.6666666666666" y="479" font-size="12" font-weight="700" fill="#1a2332" text-anchor="start">3.71 ms</text>
+<text x="56" y="522" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">Sixty warm iterations each, measured in-database. A market order</text>
+<text x="56" y="540" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">does validation, risk, the lock, the match, the execution row, the</text>
+<text x="56" y="558" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">journal entry and the position update — all of it in 3.71 ms.</text>
+<text x="36" y="648" font-size="16" font-weight="700" fill="#1a2332" text-anchor="start">Scale of the physical design</text>
+<rect x="36.0" y="664" width="165.33333333333334" height="104" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="118.66666666666667" y="706" font-size="22" font-weight="700" fill="#1f6feb" text-anchor="middle">38</text>
+<text x="118.66666666666667" y="730" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">Base tables</text>
+<rect x="211.33333333333334" y="664" width="165.33333333333334" height="104" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="294.0" y="706" font-size="22" font-weight="700" fill="#1f6feb" text-anchor="middle">30</text>
+<text x="294.0" y="730" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">Partitions</text>
+<rect x="386.6666666666667" y="664" width="165.33333333333334" height="104" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="469.33333333333337" y="706" font-size="22" font-weight="700" fill="#1f6feb" text-anchor="middle">348</text>
+<text x="469.33333333333337" y="730" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">Indexes</text>
+<rect x="562.0" y="664" width="165.33333333333334" height="104" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="644.6666666666666" y="706" font-size="22" font-weight="700" fill="#1f6feb" text-anchor="middle">338</text>
+<text x="644.6666666666666" y="730" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">Constraints (excl.</text>
+<text x="644.6666666666666" y="748" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">NOT NULL)</text>
+<rect x="737.3333333333334" y="664" width="165.33333333333334" height="104" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="820.0" y="706" font-size="22" font-weight="700" fill="#1f6feb" text-anchor="middle">84</text>
+<text x="820.0" y="730" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">Functions +</text>
+<text x="820.0" y="748" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">procedures</text>
+<rect x="912.6666666666667" y="664" width="165.33333333333334" height="104" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="995.3333333333334" y="706" font-size="22" font-weight="700" fill="#1f6feb" text-anchor="middle">40</text>
+<text x="995.3333333333334" y="730" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">Triggers</text>
+<rect x="1088.0" y="664" width="165.33333333333334" height="104" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1170.6666666666667" y="706" font-size="22" font-weight="700" fill="#1f6feb" text-anchor="middle">12 / 2</text>
+<text x="1170.6666666666667" y="730" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">Views /</text>
+<text x="1170.6666666666667" y="748" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">matviews</text>
+<rect x="1263.3333333333335" y="664" width="165.33333333333334" height="104" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1346.0000000000002" y="706" font-size="22" font-weight="700" fill="#1f6feb" text-anchor="middle">24 / 16</text>
+<text x="1346.0000000000002" y="730" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">RLS policies</text>
+<text x="1346.0000000000002" y="748" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">/ tables</text>
+<rect x="1438.6666666666667" y="664" width="165.33333333333334" height="104" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1521.3333333333335" y="706" font-size="22" font-weight="700" fill="#1f6feb" text-anchor="middle">~442,000</text>
+<text x="1521.3333333333335" y="730" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">1-minute candle</text>
+<text x="1521.3333333333335" y="748" font-size="11" font-weight="400" fill="#5a6676" text-anchor="middle">rows</text>
+</svg>

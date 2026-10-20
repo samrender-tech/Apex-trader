@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="880" viewBox="0 0 1640 880" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1640" height="880" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#2f3b4d"/></marker><marker id="aro" markerWidth="10" markerHeight="10" refX="9" refY="3.2" orient="auto"><path d="M0,0 L9,3.2 L0,6.4 z" fill="#1f6feb"/></marker></defs>
+<text x="26" y="34" font-size="20" font-weight="700" fill="#1a2332" text-anchor="start">Order lifecycle — one transaction, seven stages</text>
+<text x="26" y="58" font-size="13" font-weight="400" fill="#5a6676" text-anchor="start">Any stage that raises rolls back every earlier one. There is no partially applied order.</text>
+<rect x="36" y="108" width="200" height="118" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="48" y="134" font-size="15" font-weight="700" fill="#1f6feb" text-anchor="start">1</text>
+<text x="68" y="134" xml:space="preserve" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">submit_order</text>
+<text x="48" y="160" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">account, instrument,</text>
+<text x="48" y="178" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">side, kind, qty, price</text>
+<path d="M236,167.0 L260,167.0" fill="none" stroke="#2f3b4d" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="264" y="108" width="200" height="118" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="276" y="134" font-size="15" font-weight="700" fill="#1f6feb" text-anchor="start">2</text>
+<text x="296" y="134" xml:space="preserve" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">validate_order</text>
+<text x="276" y="160" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">tick grid · lot size</text>
+<text x="276" y="178" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">price band · halt</text>
+<path d="M464,167.0 L488,167.0" fill="none" stroke="#2f3b4d" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="492" y="108" width="200" height="118" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="504" y="134" font-size="15" font-weight="700" fill="#1f6feb" text-anchor="start">3</text>
+<text x="524" y="134" xml:space="preserve" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">pretrade_check</text>
+<text x="504" y="160" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">buying power · holdings</text>
+<text x="504" y="178" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">concentration · rate · loss</text>
+<path d="M692,167.0 L716,167.0" fill="none" stroke="#2f3b4d" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="720" y="108" width="200" height="118" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="732" y="134" font-size="15" font-weight="700" fill="#1f6feb" text-anchor="start">4</text>
+<text x="752" y="134" xml:space="preserve" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">advisory lock</text>
+<text x="732" y="160" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">pg_advisory_xact_lock</text>
+<text x="732" y="178" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">(instrument_id)</text>
+<path d="M920,167.0 L944,167.0" fill="none" stroke="#2f3b4d" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="948" y="108" width="200" height="118" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="960" y="134" font-size="15" font-weight="700" fill="#1f6feb" text-anchor="start">5</text>
+<text x="980" y="134" xml:space="preserve" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">match loop</text>
+<text x="960" y="160" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">price-time priority</text>
+<text x="960" y="178" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">FOR UPDATE, no SKIP</text>
+<path d="M1148,167.0 L1172,167.0" fill="none" stroke="#2f3b4d" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="1176" y="108" width="200" height="118" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1188" y="134" font-size="15" font-weight="700" fill="#1f6feb" text-anchor="start">6</text>
+<text x="1208" y="134" xml:space="preserve" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">settle_fill</text>
+<text x="1188" y="160" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">journal entry</text>
+<text x="1188" y="178" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">+ position + quote</text>
+<path d="M1376,167.0 L1400,167.0" fill="none" stroke="#2f3b4d" stroke-width="1.7" marker-end="url(#ar)"/>
+<rect x="1404" y="108" width="200" height="118" rx="6" fill="#dce8fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="1416" y="134" font-size="15" font-weight="700" fill="#1f6feb" text-anchor="start">7</text>
+<text x="1436" y="134" xml:space="preserve" font-size="14.5" font-weight="700" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">COMMIT</text>
+<text x="1416" y="160" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">deferred zero-sum</text>
+<text x="1416" y="178" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start">constraint fires</text>
+<path d="M1504.0,236 L136.0,236" fill="none" stroke="#2f3b4d" stroke-width="1.7" stroke-dasharray="6 5" marker-end="url(#ar)"/>
+<text x="820.0" y="260" font-size="13" font-weight="700" fill="#1a2332" text-anchor="middle">ROLLBACK — any failure unwinds all seven</text>
+<rect x="36" y="310" width="780" height="290" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="56" y="340" font-size="16" font-weight="700" fill="#1a2332" text-anchor="start">What stage 5 actually does</text>
+<text x="56" y="368.0" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">FOR v_resting IN</text>
+<text x="56" y="384.5" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">    SELECT order_id, limit_price, leaves_qty</text>
+<text x="56" y="401.0" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">      FROM trading.trade_order</text>
+<text x="56" y="417.5" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">     WHERE instrument_id = p_instrument_id</text>
+<text x="56" y="434.0" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">       AND side = v_opposite</text>
+<text x="56" y="450.5" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">       AND status IN (&#x27;working&#x27;,&#x27;partially_filled&#x27;)</text>
+<text x="56" y="467.0" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">     ORDER BY CASE WHEN p_side=&#x27;buy&#x27;  THEN limit_price END ASC,</text>
+<text x="56" y="483.5" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">              CASE WHEN p_side=&#x27;sell&#x27; THEN limit_price END DESC,</text>
+<text x="56" y="500.0" xml:space="preserve" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">              sequence_no              -- time priority</text>
+<text x="56" y="516.5" xml:space="preserve" font-size="11.5" font-weight="400" fill="#5a6676" text-anchor="start" font-family="Consolas, monospace">    FOR UPDATE                         -- never SKIP LOCKED</text>
+<text x="56" y="533.0" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">LOOP</text>
+<text x="56" y="549.5" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">    v_fill := LEAST(v_remaining, v_resting.leaves_qty);</text>
+<text x="56" y="566.0" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">    PERFORM engine.settle_fill(...);</text>
+<text x="56" y="582.5" xml:space="preserve" font-size="11.5" font-weight="400" fill="#1a2332" text-anchor="start" font-family="Consolas, monospace">END LOOP;</text>
+<rect x="846" y="310" width="758" height="290" rx="6" fill="#e8f0fe" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="866" y="340" font-size="16" font-weight="700" fill="#1a2332" text-anchor="start">Why FOR UPDATE and not FOR UPDATE SKIP LOCKED</text>
+<text x="866" y="368" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">SKIP LOCKED is the usual advice for queue draining, and it is</text>
+<text x="866" y="385" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">exactly wrong here.</text>
+<text x="866" y="402" font-size="12" font-weight="400" fill="#5a6676" text-anchor="start"></text>
+<text x="866" y="419" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">If order A at 174.87 is locked by another session, SKIP LOCKED</text>
+<text x="866" y="436" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">steps over it and fills order B at the same price — B arrived</text>
+<text x="866" y="453" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">later, so the exchange has just broken its own time-priority</text>
+<text x="866" y="470" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">promise. The trade is not incorrect in the accounting sense;</text>
+<text x="866" y="487" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">it is incorrect in the FAIRNESS sense, which is the one a venue</text>
+<text x="866" y="504" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">is actually selling.</text>
+<text x="866" y="521" font-size="12" font-weight="400" fill="#5a6676" text-anchor="start"></text>
+<text x="866" y="538" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">So the session waits. Throughput across one instrument is the</text>
+<text x="866" y="555" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">price of a guarantee that the earliest order at a price always</text>
+<text x="866" y="572" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">fills first. Different instruments still match in parallel,</text>
+<text x="866" y="589" font-size="12" font-weight="400" fill="#1a2332" text-anchor="start">because the advisory lock is keyed on instrument_id.</text>
+<rect x="36" y="630" width="1568" height="210" rx="6" fill="#f7f9fc" stroke="#2f3b4d" stroke-width="1.8"/>
+<text x="56" y="662" font-size="16" font-weight="700" fill="#1a2332" text-anchor="start">Concurrency and isolation</text>
+<text x="56" y="692" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">•  READ COMMITTED is sufficient because correctness does not rest on the isolation level — it rests on the lock and the constraints.</text>
+<text x="56" y="716" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">•  pg_advisory_xact_lock(instrument_id) serialises matching per instrument and releases at COMMIT or ROLLBACK with no cleanup code.</text>
+<text x="56" y="740" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">•  FOR UPDATE takes a row lock on each resting order considered, so two matchers cannot both decide the same order has quantity left.</text>
+<text x="56" y="764" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">•  The deferred constraint is evaluated once per transaction at COMMIT, after every leg of every entry has been written.</text>
+<text x="56" y="788" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">•  Verified empirically: 12 concurrent sessions, 300 orders, 3,000 shares demanded against 3,000 available — filled exactly 3,000,</text>
+<text x="56" y="812" font-size="12.5" font-weight="400" fill="#1a2332" text-anchor="start">•  zero overfills, zero shares or cash created or destroyed.</text>
+</svg>
